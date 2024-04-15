@@ -20,5 +20,4 @@ public class AcintyoApplication {
         messageSource.setDefaultEncoding("UTF-8");
         return messageSource;
     }
-
 }

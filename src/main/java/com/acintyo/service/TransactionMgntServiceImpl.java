@@ -5,9 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.acintyo.customexceptions.TransactionNotFoundException;
@@ -24,9 +22,6 @@ import jakarta.transaction.Transactional;
 @Service
 public class TransactionMgntServiceImpl implements ITransactionMgntService {
 
-	@Value("${transaction.pagination.page-size}")
-	private Integer pageSize;
-	
 	@Autowired
 	private ILedgerHeaderRepository headerRepository;
 	@Autowired
@@ -168,40 +163,36 @@ public class TransactionMgntServiceImpl implements ITransactionMgntService {
 	}
 
 	@Override
-	public List<LedgerTransaction> findAllTransactionsofUser(String userId, String storeId, int pageNo) {
-		Pageable pageable = PageRequest.of(pageNo-1,pageSize);
+	public List<LedgerTransaction> findAllTransactionsofUser(String userId, String storeId,int page, int size) {
 		List<LedgerTransaction> list = transactionRepository
-				.findByUserIdAndStoreIdOrderByTransactionDateDesc(userId, storeId,pageable);
+				.findByUserIdAndStoreId(userId, storeId,PageRequest.of(page, size));
 		list.forEach(tr->tr.setHeader(null));
 		return list;
 	}
 
 	@Override
 	public List<LedgerTransaction> findAllTransactionsofUserBetween(String userId, String storeId,
-			LocalDateTime fromDate, LocalDateTime toDate, int pageNo) {
-		Pageable pageable = PageRequest.of(pageNo-1,pageSize);
+			LocalDateTime fromDate, LocalDateTime toDate,  int page, int size) {
 		List<LedgerTransaction> listOfTransactions = transactionRepository
-					.findByUserIdAndStoreIdAndTransactionDateBetweenOrderByTransactionDateDesc
-						(userId, storeId, fromDate, toDate, pageable);
+					.findByUserIdAndStoreIdAndTransactionDateBetween
+						(userId, storeId, fromDate, toDate, PageRequest.of(page, size));
 		listOfTransactions.forEach(tr->tr.setHeader(null));
 		return listOfTransactions;
 	}
 
 	@Override
-	public List<LedgerTransactionHistory> findAllTransactionsHistoryofUser(String userId, String storeId, int pageNo) {
-		Pageable pageable = PageRequest.of(pageNo-1,pageSize);
+	public List<LedgerTransactionHistory> findAllTransactionsHistoryofUser(String userId, String storeId, int page, int size) {
 		List<LedgerTransactionHistory> history = historyRepository
-				.findByUserIdAndStoreIdOrderByTransactionDate(userId, storeId,pageable);
+				.findByUserIdAndStoreId(userId, storeId, PageRequest.of(page, size));
 		return history;
 	}
 
 	@Override
 	public List<LedgerTransactionHistory> findAllTransactionsHistoryofUserBetween(String userId, String storeId,
-			LocalDateTime fromDate, LocalDateTime toDate, int pageNo) {
-		Pageable pageable = PageRequest.of(pageNo-1,pageSize);
+			LocalDateTime fromDate, LocalDateTime toDate, int page, int size) {
 		List<LedgerTransactionHistory> history = historyRepository
-					.findByUserIdAndStoreIdAndTransactionDateBetweenOrderByTransactionDate
-						(userId, storeId, fromDate, toDate, pageable);
+					.findByUserIdAndStoreIdAndTransactionDateBetween
+						(userId, storeId, fromDate, toDate,PageRequest.of(page, size));		
 		return history;
 	}
 }

@@ -51,40 +51,58 @@ public class TransactionsRestOperationsController {
 	} 
 	
 	@GetMapping("/get-header-details/{userId}/{storeId}")
-	public ResponseEntity<LedgerHeader> getHeader(@PathVariable String userId, @PathVariable String storeId) {
+	public ResponseEntity<LedgerHeader> getHeader(
+			@PathVariable String userId,
+			@PathVariable String storeId) {
 		LedgerHeader header = service.findHeader(userId, storeId);
 		return new ResponseEntity<LedgerHeader>(header,HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/get-ledger-transactions/{userId}/{storeId}")
-	public ResponseEntity<List<LedgerTransaction>> getTransactions
-		(@PathVariable String userId, @PathVariable String storeId, @RequestParam int pageNo) {
-		List<LedgerTransaction> allTransactionsofUser = service.findAllTransactionsofUser(userId, storeId, pageNo);
+	public ResponseEntity<List<LedgerTransaction>> getTransactions(
+				@PathVariable String userId, 
+				@PathVariable String storeId, 
+				@RequestParam(required = false) int page,
+				@RequestParam(required = false) int size) {
+		List<LedgerTransaction> allTransactionsofUser = service
+				.findAllTransactionsofUser(userId, storeId, page, size);
 		return new ResponseEntity<List<LedgerTransaction>>(allTransactionsofUser,HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/get-ledger-transactions-between/{userId}/{storeId}")
-	public ResponseEntity<List<LedgerTransaction>> getTransactions
-		(@PathVariable String userId, @PathVariable String storeId,@RequestParam LocalDateTime fromDate, LocalDateTime toDate
-				, @RequestParam int pageNo) {
-		List<LedgerTransaction> allTransactionsofUser = service.findAllTransactionsofUserBetween
-				(userId, storeId,fromDate,toDate, pageNo);
+	public ResponseEntity<List<LedgerTransaction>> getTransactions(
+			@PathVariable String userId, 
+			@PathVariable String storeId,
+			@RequestParam LocalDateTime fromDate,
+			@RequestParam LocalDateTime toDate, 
+			@RequestParam(required = false) int page,
+			@RequestParam(required = false) int size) {
+		List<LedgerTransaction> allTransactionsofUser = service
+				.findAllTransactionsofUserBetween(userId, storeId,fromDate,toDate, page, size);
 		return new ResponseEntity<List<LedgerTransaction>>(allTransactionsofUser,HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/get-ledger-history/{userId}/{storeId}")
-	public ResponseEntity<List<LedgerTransactionHistory>> getTransactionsHistory
-		(@PathVariable String userId, @PathVariable String storeId, @RequestParam int pageNo) {
-		List<LedgerTransactionHistory> allTransactionsofUser = service.findAllTransactionsHistoryofUser(userId, storeId, pageNo);
+	public ResponseEntity<List<LedgerTransactionHistory>> getTransactionsHistory(
+			@PathVariable String userId, 
+			@PathVariable String storeId, 
+			@RequestParam(required = false) int page,
+			@RequestParam(required = false) int size) {
+		List<LedgerTransactionHistory> allTransactionsofUser = service
+				.findAllTransactionsHistoryofUser(userId, storeId, page, size);
 		return new ResponseEntity<List<LedgerTransactionHistory>>(allTransactionsofUser,HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/get-ledger-history-between/{userId}/{storeId}")
-	public ResponseEntity<List<LedgerTransactionHistory>> getTransactionsHistory
-		(@PathVariable String userId, @PathVariable String storeId,@RequestParam LocalDateTime fromDate, LocalDateTime toDate
-				, @RequestParam int pageNo) {
-		List<LedgerTransactionHistory> allTransactionsofUser = service.findAllTransactionsHistoryofUserBetween
-				(userId, storeId,fromDate,toDate, pageNo);
+	public ResponseEntity<List<LedgerTransactionHistory>> getTransactionsHistory(
+			@PathVariable String userId, 
+			@PathVariable String storeId,
+			@RequestParam LocalDateTime fromDate, 
+			@RequestParam LocalDateTime toDate,
+			@RequestParam(required = false) int page,
+			@RequestParam(required = false) int size) {
+		List<LedgerTransactionHistory> allTransactionsofUser = service
+				.findAllTransactionsHistoryofUserBetween(userId, storeId,fromDate,toDate, page, size);
 		return new ResponseEntity<List<LedgerTransactionHistory>>(allTransactionsofUser,HttpStatus.CREATED);
 	}
 	
