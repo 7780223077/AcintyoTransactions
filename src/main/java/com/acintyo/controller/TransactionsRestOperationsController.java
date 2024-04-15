@@ -63,9 +63,11 @@ public class TransactionsRestOperationsController {
 				@PathVariable String userId, 
 				@PathVariable String storeId, 
 				@RequestParam(required = false) int page,
-				@RequestParam(required = false) int size) {
+				@RequestParam(required = false) int size,
+				@RequestParam String sortBy,
+				@RequestParam String order) {
 		List<LedgerTransaction> allTransactionsofUser = service
-				.findAllTransactionsofUser(userId, storeId, page, size);
+				.findAllTransactionsofUser(userId, storeId, page, size, sortBy, order);
 		return new ResponseEntity<List<LedgerTransaction>>(allTransactionsofUser,HttpStatus.CREATED);
 	}
 	
@@ -76,9 +78,11 @@ public class TransactionsRestOperationsController {
 			@RequestParam LocalDateTime fromDate,
 			@RequestParam LocalDateTime toDate, 
 			@RequestParam(required = false) int page,
-			@RequestParam(required = false) int size) {
+			@RequestParam(required = false) int size,
+			@RequestParam String sortBy,
+			@RequestParam String order) {
 		List<LedgerTransaction> allTransactionsofUser = service
-				.findAllTransactionsofUserBetween(userId, storeId,fromDate,toDate, page, size);
+				.findAllTransactionsofUserBetween(userId, storeId,fromDate,toDate, page, size, sortBy, order);
 		return new ResponseEntity<List<LedgerTransaction>>(allTransactionsofUser,HttpStatus.CREATED);
 	}
 	
@@ -87,9 +91,11 @@ public class TransactionsRestOperationsController {
 			@PathVariable String userId, 
 			@PathVariable String storeId, 
 			@RequestParam(required = false) int page,
-			@RequestParam(required = false) int size) {
+			@RequestParam(required = false) int size,
+			@RequestParam String sortBy,
+			@RequestParam String order) {
 		List<LedgerTransactionHistory> allTransactionsofUser = service
-				.findAllTransactionsHistoryofUser(userId, storeId, page, size);
+				.findAllTransactionsHistoryofUser(userId, storeId, page, size, sortBy, order);
 		return new ResponseEntity<List<LedgerTransactionHistory>>(allTransactionsofUser,HttpStatus.CREATED);
 	}
 	
@@ -100,9 +106,11 @@ public class TransactionsRestOperationsController {
 			@RequestParam LocalDateTime fromDate, 
 			@RequestParam LocalDateTime toDate,
 			@RequestParam(required = false) int page,
-			@RequestParam(required = false) int size) {
+			@RequestParam(required = false) int size,
+			@RequestParam String sortBy,
+			@RequestParam String order) {
 		List<LedgerTransactionHistory> allTransactionsofUser = service
-				.findAllTransactionsHistoryofUserBetween(userId, storeId,fromDate,toDate, page, size);
+				.findAllTransactionsHistoryofUserBetween(userId, storeId,fromDate,toDate, page, size, sortBy, order);
 		return new ResponseEntity<List<LedgerTransactionHistory>>(allTransactionsofUser,HttpStatus.CREATED);
 	}
 	

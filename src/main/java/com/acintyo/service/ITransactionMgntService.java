@@ -13,14 +13,14 @@ public interface ITransactionMgntService {
 	
 	LedgerHeader findHeader(String userId, String storeId);
 	
-	List<LedgerTransaction> findAllTransactionsofUser(String userId, String storeId, int page, int size);
+	List<LedgerTransaction> findAllTransactionsofUser(String userId, String storeId, int page, int size, String sortBy, String order);
 	
 	List<LedgerTransaction> findAllTransactionsofUserBetween
-		(String userId, String storeId, LocalDateTime fromDate, LocalDateTime toDate, int page, int size);
+		(String userId, String storeId, LocalDateTime fromDate, LocalDateTime toDate, int page, int size, String sortBy, String order);
 	
 	List<LedgerTransactionHistory> findAllTransactionsHistoryofUser
-		(String userId, String storeId, int page, int size);
+		(String userId, String storeId, int page, int size, String sortBy, String order);
 	
 	List<LedgerTransactionHistory> findAllTransactionsHistoryofUserBetween
-		(String userId, String storeId, LocalDateTime fromDate, LocalDateTime toDate, int page, int size);
+		(String userId, String storeId, LocalDateTime fromDate, LocalDateTime toDate, int page, int size, String sortBy, String order);
 }

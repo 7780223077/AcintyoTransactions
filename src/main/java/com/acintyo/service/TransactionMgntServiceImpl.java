@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.acintyo.customexceptions.TransactionNotFoundException;
@@ -163,36 +164,42 @@ public class TransactionMgntServiceImpl implements ITransactionMgntService {
 	}
 
 	@Override
-	public List<LedgerTransaction> findAllTransactionsofUser(String userId, String storeId,int page, int size) {
+	public List<LedgerTransaction> findAllTransactionsofUser
+		(String userId, String storeId,int page, int size, String sortBy, String order) {
 		List<LedgerTransaction> list = transactionRepository
-				.findByUserIdAndStoreId(userId, storeId,PageRequest.of(page, size));
+				.findByUserIdAndStoreId(userId, storeId,PageRequest
+				.of(page, size, order.equalsIgnoreCase("DESC")?Direction.DESC:Direction.ASC, sortBy));
 		list.forEach(tr->tr.setHeader(null));
 		return list;
 	}
 
 	@Override
-	public List<LedgerTransaction> findAllTransactionsofUserBetween(String userId, String storeId,
-			LocalDateTime fromDate, LocalDateTime toDate,  int page, int size) {
+	public List<LedgerTransaction> findAllTransactionsofUserBetween
+		(String userId, String storeId, LocalDateTime fromDate, LocalDateTime toDate,  
+				int page, int size, String sortBy, String order) {
 		List<LedgerTransaction> listOfTransactions = transactionRepository
-					.findByUserIdAndStoreIdAndTransactionDateBetween
-						(userId, storeId, fromDate, toDate, PageRequest.of(page, size));
+				.findByUserIdAndStoreIdAndTransactionDateBetween(userId, storeId, fromDate, toDate, PageRequest
+				.of(page, size, order.equalsIgnoreCase("DESC")?Direction.DESC:Direction.ASC, sortBy));
 		listOfTransactions.forEach(tr->tr.setHeader(null));
 		return listOfTransactions;
 	}
 
 	@Override
-	public List<LedgerTransactionHistory> findAllTransactionsHistoryofUser(String userId, String storeId, int page, int size) {
+	public List<LedgerTransactionHistory> findAllTransactionsHistoryofUser
+		(String userId, String storeId, int page, int size, String sortBy, String order) {
 		List<LedgerTransactionHistory> history = historyRepository
-				.findByUserIdAndStoreId(userId, storeId, PageRequest.of(page, size));
+				.findByUserIdAndStoreId(userId, storeId, PageRequest
+				.of(page, size, order.equalsIgnoreCase("DESC")?Direction.DESC:Direction.ASC, sortBy));
 		return history;
 	}
 
 	@Override
-	public List<LedgerTransactionHistory> findAllTransactionsHistoryofUserBetween(String userId, String storeId,
-			LocalDateTime fromDate, LocalDateTime toDate, int page, int size) {
+	public List<LedgerTransactionHistory> findAllTransactionsHistoryofUserBetween
+		(String userId, String storeId, LocalDateTime fromDate, LocalDateTime toDate,
+				int page, int size, String sortBy, String order) {
 		List<LedgerTransactionHistory> history = historyRepository
-					.findByUserIdAndStoreIdAndTransactionDateBetween
-						(userId, storeId, fromDate, toDate,PageRequest.of(page, size));		
+					.findByUserIdAndStoreIdAndTransactionDateBetween(userId, storeId, fromDate, toDate,PageRequest
+					.of(page, size, order.equalsIgnoreCase("DESC")?Direction.DESC:Direction.ASC, sortBy));		
 		return history;
 	}
 }

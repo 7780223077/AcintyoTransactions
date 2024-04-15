@@ -26,14 +26,6 @@ public class TransactionErrorHandler {
 		return new ResponseEntity<LedgerResponse>(response, HttpStatus.BAD_REQUEST);
 	}
 	
-	/*
-	 * @ExceptionHandler(RuntimeException.class) public
-	 * ResponseEntity<LedgerResponse> handleException(RuntimeException ex){
-	 * LedgerResponse response = new LedgerResponse(false,ex.getMessage()); return
-	 * new ResponseEntity<LedgerResponse>(response,
-	 * HttpStatus.INTERNAL_SERVER_ERROR); }
-	 */
-	
 	@ExceptionHandler(HttpMessageNotReadableException.class)
 	public ResponseEntity<LedgerResponse> handleException(HttpMessageNotReadableException ex){
 		LedgerResponse response = new LedgerResponse(false,"Invalid Amount or Invalid date {Date format : YYYY-MM-DDTHH:MM:SS}");
