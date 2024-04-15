@@ -52,6 +52,12 @@ public class TransactionMgntServiceImpl implements ITransactionMgntService {
 	}
 
 	private void newTransaction(LedgerTransaction ct) {
+		//checking whether TransId is already present or Not
+		Optional<LedgerTransaction> transId = transactionRepository.findByTransId(ct.getTransId());
+		if(transId.isPresent()) {
+			throw new TransactionNotFoundException("TransId is already Present. Please send unique value");
+		}
+		//checking whether a user is already present or not
 		Optional<LedgerHeader> optional = headerRepository.findByUserIdAndStoreId(ct.getUserId(), ct.getStoreId());
 		LedgerHeader header = null;
 		if (optional.isPresent()) {
@@ -109,12 +115,12 @@ public class TransactionMgntServiceImpl implements ITransactionMgntService {
 	}
 
 	private void updateTransaction(LedgerTransaction ct, LedgerTransaction prevTrasaction) {
-		// Previous LedgerTransaction
-		System.out.println("\n before update previous Transaction : " + prevTrasaction + "\n");
+		
+		//set updateBy to previous Transaction
+		prevTrasaction.setUpdatedBy(ct.getUpdatedBy());
 		
 		// Corresponding LedgerHeader for Previous LedgerTransaction
 		LedgerHeader header = headerRepository.findByUserIdAndStoreId(ct.getUserId(), ct.getStoreId()).get();
-		System.out.println("\nbefore update Header : " + header + "\n");
 		
 		// header amount
 		double headerAmt = header.getNote().equalsIgnoreCase("CR") ? header.getHeaderAmt() : (-header.getHeaderAmt());
