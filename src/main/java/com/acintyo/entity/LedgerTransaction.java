@@ -41,10 +41,7 @@ public class LedgerTransaction implements Serializable{
 
 	@Column(length = 30)
 	private String transId;
-
-	@Column(length = 30)
-	private String userId;
-
+	
 	@Column(length = 30)
 	private String storeId;
 
@@ -71,26 +68,18 @@ public class LedgerTransaction implements Serializable{
 	private LocalDateTime updatedOn;
 
 	@ManyToOne(targetEntity = LedgerHeader.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "user_name", referencedColumnName = "userId")
+	@JoinColumn(name = "user_Id", referencedColumnName = "userId")
 	private LedgerHeader header;
 
-	@Override
-	public String toString() {
-		return "LedgerTransaction [transId=" + transId + ", userId=" + userId + ", storeId=" + storeId + ", detais="
-				+ detais + ", amount=" + amount + ", note=" + note + ", transactionDate=" + transactionDate
-				+ ", insertedBy=" + insertedBy + ", insertedOn=" + insertedOn + ", updatedBy=" + updatedBy
-				+ ", updatedOn=" + updatedOn + "]";
-	}
 	
 	//constructor for new Transaction
 	public LedgerTransaction(RequestDto request) {
 		super();
 		this.transId=request.getTransId().toUpperCase();
-		this.userId=request.getUserId().toUpperCase();
 		this.storeId=request.getStoreId().toUpperCase();
 		this.detais=request.getDetais();
 		this.amount=request.getAmount();
-		this.note=request.getNote();
+		this.note=request.getNote().toUpperCase();
 		this.transactionDate=request.getTransactionDate();
 		this.insertedBy=request.getInsertedBy();
 	}
@@ -100,12 +89,19 @@ public class LedgerTransaction implements Serializable{
 		super();
 		this.recordId=request.getRecordId();
 		this.transId=request.getTransId().toUpperCase();
-		this.userId=request.getUserId().toUpperCase();
 		this.storeId=request.getStoreId().toUpperCase();
 		this.detais=request.getDetais();
 		this.amount=request.getAmount();
 		this.note=request.getNote().toUpperCase();
 		this.transactionDate=request.getTransactionDate();
 		this.updatedBy=request.getUpdatedBy();
+	}
+
+	@Override
+	public String toString() {
+		return "LedgerTransaction [recordId=" + recordId + ", transId=" + transId + ", storeId=" + storeId + ", detais="
+				+ detais + ", amount=" + amount + ", note=" + note + ", transactionDate=" + transactionDate
+				+ ", insertedBy=" + insertedBy + ", insertedOn=" + insertedOn + ", updatedBy=" + updatedBy
+				+ ", updatedOn=" + updatedOn + "]";
 	}
 }

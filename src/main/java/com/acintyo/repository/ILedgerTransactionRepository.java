@@ -10,9 +10,10 @@ import com.acintyo.entity.LedgerTransaction;
 
 public interface ILedgerTransactionRepository extends JpaRepository<LedgerTransaction, Integer>{
 	public Optional<LedgerTransaction> findByTransId(String transId);
-	public Optional<LedgerTransaction> findByTransIdAndUserIdAndStoreId(String transId, String userId, String storeId);
+	public Optional<LedgerTransaction> findByTransIdAndHeaderUserIdAndStoreId(String transId, String userId, String storeId);
 	public Optional<LedgerTransaction> findByRecordIdAndTransId(int id, String transId);
-	public List<LedgerTransaction> findByUserIdAndStoreIdAndTransactionDateBetween
+	public List<LedgerTransaction> findByHeaderUserIdAndStoreIdAndTransactionDateBetween
 		(String userId, String storeId, LocalDateTime fromDate, LocalDateTime toDate, Pageable pageable);
-	public List<LedgerTransaction> findByUserIdAndStoreId(String userId, String storeId, Pageable pageable);
+	public List<LedgerTransaction> findByHeaderUserIdAndStoreId(String userId, String storeId, Pageable pageable);
+	
 }

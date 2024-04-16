@@ -5,12 +5,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 
+import lombok.extern.slf4j.Slf4j;
+
 @SpringBootApplication
+@Slf4j
 public class AcintyoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AcintyoApplication.class, args);
-		System.out.println("Hello world");
+		log.info("Application ended successfully");
 	}
 	
 	@Bean

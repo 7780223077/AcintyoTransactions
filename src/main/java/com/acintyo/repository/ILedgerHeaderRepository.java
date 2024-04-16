@@ -7,6 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.acintyo.entity.LedgerHeader;
 
 public interface ILedgerHeaderRepository extends JpaRepository<LedgerHeader, String>{
-	public Optional<LedgerHeader> findByUserIdAndStoreId(String userId, String storeId);
-	
+	public Optional<LedgerHeader> findByUserIdIgnoreCaseAndStoreIdIgnoreCase(String userId, String storeId);
 }

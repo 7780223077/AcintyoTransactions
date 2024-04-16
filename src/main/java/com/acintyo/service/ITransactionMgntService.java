@@ -4,12 +4,17 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import com.acintyo.dto.LedgerResponse;
+import com.acintyo.dto.RequestDto;
+import com.acintyo.dto.UpdateRequestDto;
 import com.acintyo.entity.LedgerHeader;
 import com.acintyo.entity.LedgerTransaction;
 import com.acintyo.entity.LedgerTransactionHistory;
 
 public interface ITransactionMgntService {	
-	LedgerResponse doTransaction(LedgerTransaction ct, boolean newTrans);
+	
+	LedgerResponse newTransaction(RequestDto dto);
+	
+	LedgerResponse updateTransaction(UpdateRequestDto dto);
 	
 	LedgerHeader findHeader(String userId, String storeId);
 	

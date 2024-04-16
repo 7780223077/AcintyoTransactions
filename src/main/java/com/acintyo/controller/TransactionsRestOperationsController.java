@@ -24,24 +24,25 @@ import com.acintyo.entity.LedgerTransactionHistory;
 import com.acintyo.service.ITransactionMgntService;
 
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/transactions")
+@Slf4j
 public class TransactionsRestOperationsController {
 	@Autowired
 	private ITransactionMgntService service;
 	 
 	@PostMapping("/new-transaction")
 	public ResponseEntity<LedgerResponse> newTransaction(@Valid @RequestBody RequestDto request) {
-		LedgerTransaction transaction = new LedgerTransaction(request);
-		LedgerResponse response = service.doTransaction(transaction, true);
+		log.debug("New Transaction started");
+		LedgerResponse response = service.newTransaction(request);
 		return new ResponseEntity<LedgerResponse>(response,HttpStatus.OK);
 	}
 	
 	@PutMapping("/update-transaction")
 	public ResponseEntity<LedgerResponse> updateTransaction(@Valid @RequestBody UpdateRequestDto request)  {
-		LedgerTransaction transaction = new LedgerTransaction(request);
-		LedgerResponse response = service.doTransaction(transaction, false);
+		LedgerResponse response = service.updateTransaction(request);
 		return new ResponseEntity<LedgerResponse>(response,HttpStatus.OK);
 	} 
 	
@@ -58,9 +59,9 @@ public class TransactionsRestOperationsController {
 				@PathVariable String userId, 
 				@PathVariable String storeId, 
 				@RequestParam(required = false) int page,
-				@RequestParam(required = false) int size,
-				@RequestParam String sortBy,
-				@RequestParam String order) {
+				@RequestParam(required = false, defaultValue = "20") int size,
+				@RequestParam(required = false, defaultValue = "transactionDate") String sortBy,
+				@RequestParam(required = false, defaultValue = "DESC") String order) {
 		List<LedgerTransaction> allTransactionsofUser = service
 				.findAllTransactionsofUser(userId.toUpperCase(), storeId.toUpperCase(), page, size, sortBy, order);
 		return new ResponseEntity<List<LedgerTransaction>>(allTransactionsofUser,HttpStatus.CREATED);
@@ -73,9 +74,9 @@ public class TransactionsRestOperationsController {
 			@RequestParam LocalDateTime fromDate,
 			@RequestParam LocalDateTime toDate, 
 			@RequestParam(required = false) int page,
-			@RequestParam(required = false) int size,
-			@RequestParam String sortBy,
-			@RequestParam String order) {
+			@RequestParam(required = false, defaultValue = "20") int size,
+			@RequestParam(required = false, defaultValue = "transactionDate") String sortBy,
+			@RequestParam(required = false, defaultValue = "DESC") String order) {
 		List<LedgerTransaction> allTransactionsofUser = service
 				.findAllTransactionsofUserBetween(userId.toUpperCase(), storeId.toUpperCase(),fromDate,toDate, page, size, sortBy, order);
 		return new ResponseEntity<List<LedgerTransaction>>(allTransactionsofUser,HttpStatus.CREATED);
@@ -86,9 +87,9 @@ public class TransactionsRestOperationsController {
 			@PathVariable String userId, 
 			@PathVariable String storeId, 
 			@RequestParam(required = false) int page,
-			@RequestParam(required = false) int size,
-			@RequestParam String sortBy,
-			@RequestParam String order) {
+			@RequestParam(required = false,defaultValue = "20") int size,
+			@RequestParam(required = false, defaultValue = "transactionDate") String sortBy,
+			@RequestParam(required = false, defaultValue = "DESC") String order){
 		List<LedgerTransactionHistory> allTransactionsofUser = service
 				.findAllTransactionsHistoryofUser(userId.toUpperCase(), storeId.toUpperCase(), page, size, sortBy, order);
 		return new ResponseEntity<List<LedgerTransactionHistory>>(allTransactionsofUser,HttpStatus.CREATED);
@@ -101,9 +102,9 @@ public class TransactionsRestOperationsController {
 			@RequestParam LocalDateTime fromDate, 
 			@RequestParam LocalDateTime toDate,
 			@RequestParam(required = false) int page,
-			@RequestParam(required = false) int size,
-			@RequestParam String sortBy,
-			@RequestParam String order) {
+			@RequestParam(required = false, defaultValue = "20") int size,
+			@RequestParam(required = false, defaultValue = "transactionDate") String sortBy,
+			@RequestParam(required = false, defaultValue = "DESC") String order) {
 		List<LedgerTransactionHistory> allTransactionsofUser = service
 				.findAllTransactionsHistoryofUserBetween(userId.toUpperCase(), storeId.toUpperCase(),fromDate,toDate, page, size, sortBy, order);
 		return new ResponseEntity<List<LedgerTransactionHistory>>(allTransactionsofUser,HttpStatus.CREATED);
