@@ -30,11 +30,6 @@ import jakarta.validation.Valid;
 public class TransactionsRestOperationsController {
 	@Autowired
 	private ITransactionMgntService service;
-
-	@GetMapping("/display")
-	public ResponseEntity<String> displayMsg() {
-		return new ResponseEntity<String>("Hello world", HttpStatus.OK);
-	}
 	 
 	@PostMapping("/new-transaction")
 	public ResponseEntity<LedgerResponse> newTransaction(@Valid @RequestBody RequestDto request) {
@@ -54,7 +49,7 @@ public class TransactionsRestOperationsController {
 	public ResponseEntity<LedgerHeader> getHeader(
 			@PathVariable String userId,
 			@PathVariable String storeId) {
-		LedgerHeader header = service.findHeader(userId, storeId);
+		LedgerHeader header = service.findHeader(userId.toUpperCase(), storeId.toUpperCase());
 		return new ResponseEntity<LedgerHeader>(header,HttpStatus.CREATED);
 	}
 	
@@ -67,7 +62,7 @@ public class TransactionsRestOperationsController {
 				@RequestParam String sortBy,
 				@RequestParam String order) {
 		List<LedgerTransaction> allTransactionsofUser = service
-				.findAllTransactionsofUser(userId, storeId, page, size, sortBy, order);
+				.findAllTransactionsofUser(userId.toUpperCase(), storeId.toUpperCase(), page, size, sortBy, order);
 		return new ResponseEntity<List<LedgerTransaction>>(allTransactionsofUser,HttpStatus.CREATED);
 	}
 	
@@ -82,7 +77,7 @@ public class TransactionsRestOperationsController {
 			@RequestParam String sortBy,
 			@RequestParam String order) {
 		List<LedgerTransaction> allTransactionsofUser = service
-				.findAllTransactionsofUserBetween(userId, storeId,fromDate,toDate, page, size, sortBy, order);
+				.findAllTransactionsofUserBetween(userId.toUpperCase(), storeId.toUpperCase(),fromDate,toDate, page, size, sortBy, order);
 		return new ResponseEntity<List<LedgerTransaction>>(allTransactionsofUser,HttpStatus.CREATED);
 	}
 	
@@ -95,7 +90,7 @@ public class TransactionsRestOperationsController {
 			@RequestParam String sortBy,
 			@RequestParam String order) {
 		List<LedgerTransactionHistory> allTransactionsofUser = service
-				.findAllTransactionsHistoryofUser(userId, storeId, page, size, sortBy, order);
+				.findAllTransactionsHistoryofUser(userId.toUpperCase(), storeId.toUpperCase(), page, size, sortBy, order);
 		return new ResponseEntity<List<LedgerTransactionHistory>>(allTransactionsofUser,HttpStatus.CREATED);
 	}
 	
@@ -110,7 +105,7 @@ public class TransactionsRestOperationsController {
 			@RequestParam String sortBy,
 			@RequestParam String order) {
 		List<LedgerTransactionHistory> allTransactionsofUser = service
-				.findAllTransactionsHistoryofUserBetween(userId, storeId,fromDate,toDate, page, size, sortBy, order);
+				.findAllTransactionsHistoryofUserBetween(userId.toUpperCase(), storeId.toUpperCase(),fromDate,toDate, page, size, sortBy, order);
 		return new ResponseEntity<List<LedgerTransactionHistory>>(allTransactionsofUser,HttpStatus.CREATED);
 	}
 	

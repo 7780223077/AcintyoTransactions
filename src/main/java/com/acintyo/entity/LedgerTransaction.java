@@ -85,9 +85,9 @@ public class LedgerTransaction implements Serializable{
 	//constructor for new Transaction
 	public LedgerTransaction(RequestDto request) {
 		super();
-		this.transId=request.getTransId();
-		this.userId=request.getUserId();
-		this.storeId=request.getStoreId();
+		this.transId=request.getTransId().toUpperCase();
+		this.userId=request.getUserId().toUpperCase();
+		this.storeId=request.getStoreId().toUpperCase();
 		this.detais=request.getDetais();
 		this.amount=request.getAmount();
 		this.note=request.getNote();
@@ -99,9 +99,9 @@ public class LedgerTransaction implements Serializable{
 	public LedgerTransaction(UpdateRequestDto request) {
 		super();
 		this.recordId=request.getRecordId();
-		this.transId=request.getTransId();
-		this.userId=request.getUserId();
-		this.storeId=request.getStoreId();
+		this.transId=request.getTransId().toUpperCase();
+		this.userId=request.getUserId().toUpperCase();
+		this.storeId=request.getStoreId().toUpperCase();
 		this.detais=request.getDetais();
 		this.amount=request.getAmount();
 		this.note=request.getNote().toUpperCase();
