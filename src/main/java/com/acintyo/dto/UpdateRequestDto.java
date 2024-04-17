@@ -39,4 +39,12 @@ public class UpdateRequestDto {
 
 	@NotBlank(message = "{validation.notblank.updated-by}")
 	private String updatedBy;
+	
+	public void convertToUpperCase() {
+		this.transId = this.transId.toUpperCase();
+		this.userId = this.userId.toUpperCase();
+		this.storeId = this.storeId.toUpperCase();
+		this.note = this.note.toUpperCase();
+		this.updatedBy = this.updatedBy.toUpperCase();
+	}
 }

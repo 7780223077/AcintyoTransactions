@@ -1,0 +1,46 @@
+2024-04-17T16:37:34.920+05:30  INFO 15260 --- [Acintyo] [restartedMain] com.acintyo.AcintyoApplication           : Starting AcintyoApplication using Java 17.0.9 with PID 15260 (D:\Acintyo\Acintyo\target\classes started by 91778 in D:\Acintyo\Acintyo)
+2024-04-17T16:37:34.923+05:30 DEBUG 15260 --- [Acintyo] [restartedMain] com.acintyo.AcintyoApplication           : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-04-17T16:37:34.924+05:30  INFO 15260 --- [Acintyo] [restartedMain] com.acintyo.AcintyoApplication           : No active profile set, falling back to 1 default profile: "default"
+2024-04-17T16:37:34.983+05:30  INFO 15260 --- [Acintyo] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\91778\.m2\repository\com\oracle\database\jdbc\ojdbc11\21.9.0.0\ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/C:/Users/91778/.m2/repository/com/oracle/database/jdbc/ojdbc11/21.9.0.0/oraclepki.jar
+2024-04-17T16:37:34.991+05:30  INFO 15260 --- [Acintyo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-17T16:37:34.991+05:30  INFO 15260 --- [Acintyo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-17T16:37:35.857+05:30  INFO 15260 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-17T16:37:35.934+05:30  INFO 15260 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64 ms. Found 3 JPA repository interfaces.
+2024-04-17T16:37:36.689+05:30  INFO 15260 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 4040 (http)
+2024-04-17T16:37:36.706+05:30  INFO 15260 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-17T16:37:36.707+05:30  INFO 15260 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-17T16:37:36.780+05:30  INFO 15260 --- [Acintyo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-17T16:37:36.781+05:30  INFO 15260 --- [Acintyo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1789 ms
+2024-04-17T16:37:37.071+05:30  INFO 15260 --- [Acintyo] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-17T16:37:37.155+05:30  INFO 15260 --- [Acintyo] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-17T16:37:37.196+05:30  INFO 15260 --- [Acintyo] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-17T16:37:37.472+05:30  INFO 15260 --- [Acintyo] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-17T16:37:37.507+05:30  INFO 15260 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-17T16:37:37.888+05:30  INFO 15260 --- [Acintyo] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@18f0968e
+2024-04-17T16:37:37.890+05:30  INFO 15260 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-17T16:37:38.088+05:30  WARN 15260 --- [Acintyo] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-17T16:37:39.214+05:30  INFO 15260 --- [Acintyo] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-17T16:37:46.203+05:30  INFO 15260 --- [Acintyo] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-17T16:37:46.932+05:30  WARN 15260 --- [Acintyo] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-17T16:37:47.417+05:30  INFO 15260 --- [Acintyo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-17T16:37:47.482+05:30  INFO 15260 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 4040 (http) with context path ''
+2024-04-17T16:37:47.500+05:30  INFO 15260 --- [Acintyo] [restartedMain] com.acintyo.AcintyoApplication           : Started AcintyoApplication in 13.045 seconds (process running for 13.663)
+2024-04-17T16:37:47.505+05:30  INFO 15260 --- [Acintyo] [restartedMain] com.acintyo.AcintyoApplication           : Application Started successfully
+2024-04-17T16:38:09.588+05:30  INFO 15260 --- [Acintyo] [http-nio-4040-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-17T16:38:09.589+05:30  INFO 15260 --- [Acintyo] [http-nio-4040-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-17T16:38:09.590+05:30  INFO 15260 --- [Acintyo] [http-nio-4040-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-04-17T16:38:09.761+05:30 DEBUG 15260 --- [Acintyo] [http-nio-4040-exec-2] a.c.TransactionsRestOperationsController : New Transaction started
+2024-04-17T16:38:09.773+05:30  INFO 15260 --- [Acintyo] [http-nio-4040-exec-2] c.a.service.TransactionMgntServiceImpl   : newTransaction() method is invoked 
+2024-04-17T16:38:09.993+05:30 DEBUG 15260 --- [Acintyo] [http-nio-4040-exec-2] c.a.service.TransactionMgntServiceImpl   : TransId is already Present. Throwing TransactionNotFoundException
+2024-04-17T16:38:10.034+05:30  WARN 15260 --- [Acintyo] [http-nio-4040-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.acintyo.customexceptions.TransactionNotFoundException: TransId is already Present. Please send unique value]
+2024-04-17T16:38:16.261+05:30 DEBUG 15260 --- [Acintyo] [http-nio-4040-exec-4] a.c.TransactionsRestOperationsController : New Transaction started
+2024-04-17T16:38:16.263+05:30  INFO 15260 --- [Acintyo] [http-nio-4040-exec-4] c.a.service.TransactionMgntServiceImpl   : newTransaction() method is invoked 
+2024-04-17T16:38:16.316+05:30 DEBUG 15260 --- [Acintyo] [http-nio-4040-exec-4] c.a.service.TransactionMgntServiceImpl   : User is already Present LedgerHeader(userId=USER1, storeId=STORE1, description=NEFT, headerAmt=1000.0, note=CR, insertedOn=2024-04-17T16:19:31.675694, updatedOn=2024-04-17T16:19:31.675694)
+2024-04-17T16:38:16.317+05:30 DEBUG 15260 --- [Acintyo] [http-nio-4040-exec-4] c.a.service.TransactionMgntServiceImpl   : old Note = CR and new Note = CR 
+2024-04-17T16:38:16.317+05:30 DEBUG 15260 --- [Acintyo] [http-nio-4040-exec-4] c.a.service.TransactionMgntServiceImpl   : Header after Updation LedgerHeader(userId=USER1, storeId=STORE1, description=NEFT, headerAmt=2000.0, note=CR, insertedOn=2024-04-17T16:19:31.675694, updatedOn=2024-04-17T16:19:31.675694)
+2024-04-17T16:38:16.317+05:30 DEBUG 15260 --- [Acintyo] [http-nio-4040-exec-4] c.a.service.TransactionMgntServiceImpl   : Transfering data from DTO class to LedgerTransaction entity class
+2024-04-17T16:38:16.317+05:30 DEBUG 15260 --- [Acintyo] [http-nio-4040-exec-4] c.a.service.TransactionMgntServiceImpl   : Header added to Transaction
+2024-04-17T16:38:16.376+05:30 DEBUG 15260 --- [Acintyo] [http-nio-4040-exec-4] c.a.service.TransactionMgntServiceImpl   : History details are saved LedgerTransactionHistory(recordId=102, transId=T109, userId=USER1, storeId=STORE1, detais=NEFT, amount=1000.0, note=CR, transactionDate=2020-08-15T12:12:25, insertedBy=CUSTOMER, insertDate=null)
+2024-04-17T16:38:16.385+05:30 DEBUG 15260 --- [Acintyo] [http-nio-4040-exec-4] c.a.service.TransactionMgntServiceImpl   : Transaction and Header Detais are saved using Transaction 
+2024-04-17T16:38:16.400+05:30 DEBUG 15260 --- [Acintyo] [http-nio-4040-exec-4] c.a.service.TransactionMgntServiceImpl   : Transaction Data LedgerTransaction [recordId=102, transId=T109, storeId=STORE1, detais=NEFT, amount=1000.0, note=CR, transactionDate=2020-08-15T12:12:25, insertedBy=CUSTOMER, insertedOn=null, updatedBy=null, updatedOn=null]
+2024-04-17T16:38:16.401+05:30 DEBUG 15260 --- [Acintyo] [http-nio-4040-exec-4] c.a.service.TransactionMgntServiceImpl   : Header Data LedgerHeader(userId=USER1, storeId=STORE1, description=NEFT, headerAmt=2000.0, note=CR, insertedOn=2024-04-17T16:19:31.675694, updatedOn=2024-04-17T16:19:31.675694)

@@ -10,8 +10,11 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.acintyo.customexceptions.TransactionNotFoundException;
+import com.acintyo.dto.HeaderDto;
+import com.acintyo.dto.HistoryDto;
 import com.acintyo.dto.LedgerResponse;
 import com.acintyo.dto.RequestDto;
+import com.acintyo.dto.TransactionDto;
 import com.acintyo.dto.UpdateRequestDto;
 import com.acintyo.entity.LedgerHeader;
 import com.acintyo.entity.LedgerTransaction;
@@ -21,8 +24,10 @@ import com.acintyo.repository.ILedgerTransactionHistoryRepository;
 import com.acintyo.repository.ILedgerTransactionRepository;
 
 import jakarta.transaction.Transactional;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
+@Slf4j
 public class TransactionMgntServiceImpl implements ITransactionMgntService {
 
 	@Autowired
@@ -37,19 +42,26 @@ public class TransactionMgntServiceImpl implements ITransactionMgntService {
 	@Override
 	public  LedgerResponse newTransaction(RequestDto dto) {
 		//checking whether TransId is already present or Not
-		Optional<LedgerTransaction> transId = transactionRepository.findByTransId(dto.getTransId().toUpperCase());
+		log.info("newTransaction() method is invoked ");
+		dto.convertToUpperCase();
+		Optional<LedgerTransaction> transId = transactionRepository.findByTransId(dto.getTransId());
 		if(transId.isPresent()) {
+			log.debug("TransId is already Present. Throwing TransactionNotFoundException");
 			throw new TransactionNotFoundException("TransId is already Present. Please send unique value");
 		}
 		//checking whether a user is already present or not
-		Optional<LedgerHeader> optional = headerRepository.findByUserIdIgnoreCaseAndStoreIdIgnoreCase(dto.getUserId().toUpperCase(), dto.getStoreId().toUpperCase());
+		Optional<LedgerHeader> optional = headerRepository.findByUserIdIgnoreCaseAndStoreIdIgnoreCase
+				(dto.getUserId(), dto.getStoreId());
 		LedgerHeader header = null;
 		if (optional.isPresent()) {
 			// fetching header
 			header = optional.get();
+			log.debug("User is already Present "+header);
 		} else {
 			// craete new Header
-			header = new LedgerHeader(dto.getUserId().toUpperCase(), dto.getStoreId().toUpperCase(), dto.getDetais(), 0.0, "CR");
+			header = new LedgerHeader(dto.getUserId(), dto.getStoreId(), 
+					dto.getDetais(), 0.0, "CR");
+			log.debug("User Not Found Creating new Hedaer  "+header);
 		}
 		String headerNote = header.getNote();
 		String newNote = dto.getNote();
@@ -58,45 +70,54 @@ public class TransactionMgntServiceImpl implements ITransactionMgntService {
 		if (headerNote.equalsIgnoreCase("CR") && newNote.equalsIgnoreCase("CR")) {
 			header.setNote(newNote);
 			header.setHeaderAmt(header.getHeaderAmt() + dto.getAmount());
+			log.debug("old Note = CR and new Note = CR ");
+			log.debug("Header after Updation "+header);
 		}
 		// note: old=DR and new=CR
 		else if (headerNote.equalsIgnoreCase("DR") && newNote.equalsIgnoreCase("DR")) {
 			header.setNote(newNote);
 			header.setHeaderAmt(header.getHeaderAmt() + dto.getAmount());
+			log.debug("old Note = DR and new Note = DR ");
+			log.debug("Header after Updation "+header);
 		}
 		// note: old=CR and new=DR
 		else if (headerNote.equalsIgnoreCase("CR") && newNote.equalsIgnoreCase("DR")) {
 			Double amount = header.getHeaderAmt() - dto.getAmount();
 			header.setNote(amount > 0 ? "CR" : "DR");
 			header.setHeaderAmt(Math.abs(amount));
+			log.debug("old Note = CR and new Note = DR ");
+			log.debug("Header after Updation "+header);
 		}
 		// note: old=DR and new=CR
 		else if (headerNote.equalsIgnoreCase("DR") && newNote.equalsIgnoreCase("CR")) {
 			Double amount = dto.getAmount() - header.getHeaderAmt();
 			header.setNote(amount > 0 ? "CR" : "DR");
 			header.setHeaderAmt(Math.abs(amount));
+			log.debug("old Note = DR and new Note = CR ");
+			log.debug("Header after Updation "+header);
 		}
-		// all header to transactionF
+		log.debug("Transfering data from DTO class to LedgerTransaction entity class");
 		LedgerTransaction ct = new LedgerTransaction(dto);
 		ct.setHeader(header);
-
+		log.debug("Header added to Transaction");
+		
 		LedgerTransactionHistory history = new LedgerTransactionHistory();
-		history.setTransId(dto.getTransId().toUpperCase());
-		history.setUserId(dto.getUserId().toUpperCase());
-		history.setStoreId(dto.getStoreId().toUpperCase());
+		history.setTransId(dto.getTransId());
+		history.setUserId(dto.getUserId());
+		history.setStoreId(dto.getStoreId());
 		history.setDetais(dto.getDetais());
 		history.setAmount(dto.getAmount());
-		history.setNote(dto.getNote().toUpperCase());
+		history.setNote(dto.getNote());
 		history.setTransactionDate(dto.getTransactionDate());
 		history.setInsertedBy(dto.getInsertedBy());
 		// save the history
 		historyRepository.save(history);
+		log.debug("History details are saved "+history);
 		// save the transaction
 		transactionRepository.save(ct);
-		// update the header
-		header = headerRepository.save(header);
-		System.out.println("\n header : " + header + "\n");
-
+		log.debug("Transaction and Header Detais are saved using Transaction ");
+		log.debug("Transaction Data "+ct);
+		log.debug("Header Data "+header);
 		//return the response
 		return new LedgerResponse(true,"Transaction Successfull");
 	}
@@ -105,17 +126,20 @@ public class TransactionMgntServiceImpl implements ITransactionMgntService {
 	@Transactional
 	@Override
 	public LedgerResponse updateTransaction(UpdateRequestDto dto) {
+		log.info(" updateTransaction() method is invoked ");
+		dto.convertToUpperCase();
 		Optional<LedgerTransaction> optionalTransaction = transactionRepository
-				.findByRecordIdAndTransId(dto.getRecordId(), dto.getTransId().toUpperCase());
+				.findByRecordIdAndTransId(dto.getRecordId(), dto.getTransId());
 		
 		LedgerTransaction prevTrasaction = optionalTransaction.orElseThrow(()-> 
 				new TransactionNotFoundException("Transaction Not found with given details"));
-		
+		log.debug("");
 		//set updateBy to previous Transaction
 		prevTrasaction.setUpdatedBy(dto.getUpdatedBy());
 		
 		// Corresponding LedgerHeader for Previous LedgerTransaction
-		LedgerHeader header = headerRepository.findByUserIdIgnoreCaseAndStoreIdIgnoreCase(dto.getUserId().toUpperCase(), dto.getStoreId().toUpperCase()).get();
+		LedgerHeader header = headerRepository.findByUserIdIgnoreCaseAndStoreIdIgnoreCase
+				(dto.getUserId(), dto.getStoreId()).get();
 		
 		// header amount
 		double headerAmt = header.getNote().equalsIgnoreCase("CR") ? header.getHeaderAmt() : (-header.getHeaderAmt());
@@ -140,14 +164,16 @@ public class TransactionMgntServiceImpl implements ITransactionMgntService {
 		header.setNote(headerAmt >= 0.0 ? "CR" : "DR");
 		header.setHeaderAmt(Math.abs(headerAmt));
 
-		LedgerTransactionHistory history = new LedgerTransactionHistory(dto.getTransId().toUpperCase(), dto.getUserId().toUpperCase(),
-				dto.getStoreId().toUpperCase(), dto.getDetais(), dto.getAmount(), dto.getNote().toUpperCase(), dto.getTransactionDate(),
+		LedgerTransactionHistory history = new LedgerTransactionHistory(
+				dto.getTransId(), dto.getUserId(),
+				dto.getStoreId(), dto.getDetais(), dto.getAmount(), 
+				dto.getNote(), dto.getTransactionDate(),
 				dto.getUpdatedBy());
 		
 		historyRepository.save(history);
 
 		prevTrasaction.setAmount(dto.getAmount());
-		prevTrasaction.setNote(dto.getNote().toUpperCase());
+		prevTrasaction.setNote(dto.getNote());
 
 		prevTrasaction = transactionRepository.save(prevTrasaction);
 		// save the entity classes
@@ -157,49 +183,61 @@ public class TransactionMgntServiceImpl implements ITransactionMgntService {
 	}
 
 	@Override
-	public LedgerHeader findHeader(String userId, String storeId) {
+	public HeaderDto findHeader(String userId, String storeId) {
 		Optional<LedgerHeader> optional = headerRepository.findByUserIdIgnoreCaseAndStoreIdIgnoreCase(userId, storeId);
-		if(optional.isPresent()) return optional.get();
+		if(optional.isPresent()) return new HeaderDto(optional.get());
 		else return null;
 	}
 
+	@SuppressWarnings("null")
 	@Override
-	public List<LedgerTransaction> findAllTransactionsofUser
+	public List<TransactionDto> findAllTransactionsofUser
 		(String userId, String storeId,int page, int size, String sortBy, String order) {
-		List<LedgerTransaction> list = transactionRepository
+		List<LedgerTransaction> listOfTransactions = transactionRepository
 				.findByHeaderUserIdAndStoreId(userId, storeId,PageRequest
 				.of(page, size, order.equalsIgnoreCase("DESC")?Direction.DESC:Direction.ASC, sortBy));
-		list.forEach(tr->tr.setHeader(null));
-		return list;
+//		list.forEach(tr->tr.setHeader(null));
+		List<TransactionDto> transactionDto = null;
+		listOfTransactions.forEach(e->transactionDto.add(new TransactionDto(e)));
+		return transactionDto;
 	}
 
+	@SuppressWarnings("null")
 	@Override
-	public List<LedgerTransaction> findAllTransactionsofUserBetween
+	public List<TransactionDto> findAllTransactionsofUserBetween
 		(String userId, String storeId, LocalDateTime fromDate, LocalDateTime toDate,  
 				int page, int size, String sortBy, String order) {
 		List<LedgerTransaction> listOfTransactions = transactionRepository
 				.findByHeaderUserIdAndStoreIdAndTransactionDateBetween(userId, storeId, fromDate, toDate, PageRequest
 				.of(page, size, order.equalsIgnoreCase("DESC")?Direction.DESC:Direction.ASC, sortBy));
-		listOfTransactions.forEach(tr->tr.setHeader(null));
-		return listOfTransactions;
+//		listOfTransactions.forEach(tr->tr.setHeader(null));
+		List<TransactionDto> transactionDto = null;
+		listOfTransactions.forEach(e->transactionDto.add(new TransactionDto(e)));
+		return transactionDto;
 	}
 
+	@SuppressWarnings("null")
 	@Override
-	public List<LedgerTransactionHistory> findAllTransactionsHistoryofUser
+	public List<HistoryDto> findAllTransactionsHistoryofUser
 		(String userId, String storeId, int page, int size, String sortBy, String order) {
 		List<LedgerTransactionHistory> history = historyRepository
 				.findByUserIdAndStoreId(userId, storeId, PageRequest
 				.of(page, size, order.equalsIgnoreCase("DESC")?Direction.DESC:Direction.ASC, sortBy));
-		return history;
+		List<HistoryDto> historyDto = null;
+		history.forEach(e->historyDto.add(new HistoryDto(e)));
+		return historyDto;
 	}
 
+	@SuppressWarnings("null")
 	@Override
-	public List<LedgerTransactionHistory> findAllTransactionsHistoryofUserBetween
+	public List<HistoryDto> findAllTransactionsHistoryofUserBetween
 		(String userId, String storeId, LocalDateTime fromDate, LocalDateTime toDate,
 				int page, int size, String sortBy, String order) {
 		List<LedgerTransactionHistory> history = historyRepository
 					.findByUserIdAndStoreIdAndTransactionDateBetween(userId, storeId, fromDate, toDate,PageRequest
 					.of(page, size, order.equalsIgnoreCase("DESC")?Direction.DESC:Direction.ASC, sortBy));		
-		return history;
+		List<HistoryDto> historyDto = null;
+		history.forEach(e->historyDto.add(new HistoryDto(e)));
+		return historyDto;
 	}
 }

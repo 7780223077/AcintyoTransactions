@@ -13,7 +13,8 @@ public class AcintyoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AcintyoApplication.class, args);
-		log.info("Application ended successfully");
+		log.info("Application Started successfully");
+		
 	}
 	
 	@Bean

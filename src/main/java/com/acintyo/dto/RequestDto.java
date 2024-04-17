@@ -36,4 +36,12 @@ public class RequestDto {
 
 	@NotBlank(message = "{validation.notblank.inserted-by}")
 	private String insertedBy;
+	
+	public void convertToUpperCase() {
+		this.transId = this.transId.toUpperCase();
+		this.userId = this.userId.toUpperCase();
+		this.storeId = this.storeId.toUpperCase();
+		this.note = this.note.toUpperCase();
+		this.insertedBy = this.insertedBy.toUpperCase();
+	}
 }

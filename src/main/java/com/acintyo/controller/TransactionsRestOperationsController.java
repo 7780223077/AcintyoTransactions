@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.acintyo.dto.HeaderDto;
+import com.acintyo.dto.HistoryDto;
 import com.acintyo.dto.LedgerResponse;
 import com.acintyo.dto.RequestDto;
+import com.acintyo.dto.TransactionDto;
 import com.acintyo.dto.UpdateRequestDto;
-import com.acintyo.entity.LedgerHeader;
-import com.acintyo.entity.LedgerTransaction;
-import com.acintyo.entity.LedgerTransactionHistory;
 import com.acintyo.service.ITransactionMgntService;
 
 import jakarta.validation.Valid;
@@ -47,28 +47,28 @@ public class TransactionsRestOperationsController {
 	} 
 	
 	@GetMapping("/get-header-details/{userId}/{storeId}")
-	public ResponseEntity<LedgerHeader> getHeader(
+	public ResponseEntity<HeaderDto> getHeader(
 			@PathVariable String userId,
 			@PathVariable String storeId) {
-		LedgerHeader header = service.findHeader(userId.toUpperCase(), storeId.toUpperCase());
-		return new ResponseEntity<LedgerHeader>(header,HttpStatus.CREATED);
+		HeaderDto header = service.findHeader(userId.toUpperCase(), storeId.toUpperCase());
+		return new ResponseEntity<HeaderDto>(header,HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/get-ledger-transactions/{userId}/{storeId}")
-	public ResponseEntity<List<LedgerTransaction>> getTransactions(
-				@PathVariable String userId, 
-				@PathVariable String storeId, 
-				@RequestParam(required = false) int page,
-				@RequestParam(required = false, defaultValue = "20") int size,
-				@RequestParam(required = false, defaultValue = "transactionDate") String sortBy,
-				@RequestParam(required = false, defaultValue = "DESC") String order) {
-		List<LedgerTransaction> allTransactionsofUser = service
+	public ResponseEntity<List<TransactionDto>> getTransactions(
+			@PathVariable String userId, 
+			@PathVariable String storeId, 
+			@RequestParam(required = false) int page,
+			@RequestParam(required = false, defaultValue = "20") int size,
+			@RequestParam(required = false, defaultValue = "transactionDate") String sortBy,
+			@RequestParam(required = false, defaultValue = "DESC") String order) {
+		List<TransactionDto> allTransactionsofUser = service
 				.findAllTransactionsofUser(userId.toUpperCase(), storeId.toUpperCase(), page, size, sortBy, order);
-		return new ResponseEntity<List<LedgerTransaction>>(allTransactionsofUser,HttpStatus.CREATED);
+		return new ResponseEntity<List<TransactionDto>>(allTransactionsofUser,HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/get-ledger-transactions-between/{userId}/{storeId}")
-	public ResponseEntity<List<LedgerTransaction>> getTransactions(
+	public ResponseEntity<List<TransactionDto>> getTransactions(
 			@PathVariable String userId, 
 			@PathVariable String storeId,
 			@RequestParam LocalDateTime fromDate,
@@ -77,26 +77,26 @@ public class TransactionsRestOperationsController {
 			@RequestParam(required = false, defaultValue = "20") int size,
 			@RequestParam(required = false, defaultValue = "transactionDate") String sortBy,
 			@RequestParam(required = false, defaultValue = "DESC") String order) {
-		List<LedgerTransaction> allTransactionsofUser = service
+		List<TransactionDto> allTransactionsofUser = service
 				.findAllTransactionsofUserBetween(userId.toUpperCase(), storeId.toUpperCase(),fromDate,toDate, page, size, sortBy, order);
-		return new ResponseEntity<List<LedgerTransaction>>(allTransactionsofUser,HttpStatus.CREATED);
+		return new ResponseEntity<List<TransactionDto>>(allTransactionsofUser,HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/get-ledger-history/{userId}/{storeId}")
-	public ResponseEntity<List<LedgerTransactionHistory>> getTransactionsHistory(
+	public ResponseEntity<List<HistoryDto>> getTransactionsHistory(
 			@PathVariable String userId, 
 			@PathVariable String storeId, 
 			@RequestParam(required = false) int page,
 			@RequestParam(required = false,defaultValue = "20") int size,
 			@RequestParam(required = false, defaultValue = "transactionDate") String sortBy,
 			@RequestParam(required = false, defaultValue = "DESC") String order){
-		List<LedgerTransactionHistory> allTransactionsofUser = service
+		List<HistoryDto> allTransactionsofUser = service
 				.findAllTransactionsHistoryofUser(userId.toUpperCase(), storeId.toUpperCase(), page, size, sortBy, order);
-		return new ResponseEntity<List<LedgerTransactionHistory>>(allTransactionsofUser,HttpStatus.CREATED);
+		return new ResponseEntity<List<HistoryDto>>(allTransactionsofUser,HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/get-ledger-history-between/{userId}/{storeId}")
-	public ResponseEntity<List<LedgerTransactionHistory>> getTransactionsHistory(
+	public ResponseEntity<List<HistoryDto>> getTransactionsHistory(
 			@PathVariable String userId, 
 			@PathVariable String storeId,
 			@RequestParam LocalDateTime fromDate, 
@@ -105,9 +105,9 @@ public class TransactionsRestOperationsController {
 			@RequestParam(required = false, defaultValue = "20") int size,
 			@RequestParam(required = false, defaultValue = "transactionDate") String sortBy,
 			@RequestParam(required = false, defaultValue = "DESC") String order) {
-		List<LedgerTransactionHistory> allTransactionsofUser = service
+		List<HistoryDto> allTransactionsofUser = service
 				.findAllTransactionsHistoryofUserBetween(userId.toUpperCase(), storeId.toUpperCase(),fromDate,toDate, page, size, sortBy, order);
-		return new ResponseEntity<List<LedgerTransactionHistory>>(allTransactionsofUser,HttpStatus.CREATED);
+		return new ResponseEntity<List<HistoryDto>>(allTransactionsofUser,HttpStatus.CREATED);
 	}
 	
 	
