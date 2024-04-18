@@ -1,4 +1,4 @@
-package com.acintyo.controller;
+package ai.acintyo.transactions.controller;
 
 import java.util.HashMap;
 
@@ -9,8 +9,9 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.acintyo.customexceptions.TransactionNotFoundException;
-import com.acintyo.dto.LedgerResponse;
+import ai.acintyo.transactions.dto.LedgerResponse;
+import ai.acintyo.transactions.exceptions.TransactionFoundException;
+import ai.acintyo.transactions.exceptions.TransactionNotFoundException;
 
 @RestControllerAdvice
 public class TransactionErrorHandler {
@@ -34,6 +35,12 @@ public class TransactionErrorHandler {
 	
 	@ExceptionHandler(TransactionNotFoundException.class)
 	public ResponseEntity<LedgerResponse> handleTransactionNotFoundException(TransactionNotFoundException ex){
+		LedgerResponse response = new LedgerResponse(false,ex.getMessage());
+		return new ResponseEntity<LedgerResponse>(response, HttpStatus.BAD_REQUEST);
+	}
+	
+	@ExceptionHandler(TransactionFoundException.class)
+	public ResponseEntity<LedgerResponse> handleTransactionFoundException(TransactionFoundException ex){
 		LedgerResponse response = new LedgerResponse(false,ex.getMessage());
 		return new ResponseEntity<LedgerResponse>(response, HttpStatus.BAD_REQUEST);
 	}

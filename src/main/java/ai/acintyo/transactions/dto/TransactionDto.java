@@ -1,9 +1,8 @@
-package com.acintyo.dto;
+package ai.acintyo.transactions.dto;
 
 import java.time.LocalDateTime;
 
-import com.acintyo.entity.LedgerTransaction;
-
+import ai.acintyo.transactions.entity.LedgerTransaction;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

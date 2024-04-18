@@ -1,14 +1,14 @@
-package com.acintyo.service;
+package ai.acintyo.transactions.service;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-import com.acintyo.dto.HeaderDto;
-import com.acintyo.dto.HistoryDto;
-import com.acintyo.dto.LedgerResponse;
-import com.acintyo.dto.RequestDto;
-import com.acintyo.dto.TransactionDto;
-import com.acintyo.dto.UpdateRequestDto;
+import ai.acintyo.transactions.dto.HeaderDto;
+import ai.acintyo.transactions.dto.HistoryDto;
+import ai.acintyo.transactions.dto.LedgerResponse;
+import ai.acintyo.transactions.dto.RequestDto;
+import ai.acintyo.transactions.dto.TransactionDto;
+import ai.acintyo.transactions.dto.UpdateRequestDto;
 
 public interface ITransactionMgntService {	
 	

@@ -1,4 +1,4 @@
-package com.acintyo.customexceptions;
+package ai.acintyo.transactions.exceptions;
 
 @SuppressWarnings("serial")
 public class TransactionNotFoundException extends RuntimeException{

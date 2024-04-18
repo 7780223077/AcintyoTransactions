@@ -1,6 +1,7 @@
-package com.acintyo.service;
+package ai.acintyo.transactions.service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -9,20 +10,20 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
-import com.acintyo.customexceptions.TransactionNotFoundException;
-import com.acintyo.dto.HeaderDto;
-import com.acintyo.dto.HistoryDto;
-import com.acintyo.dto.LedgerResponse;
-import com.acintyo.dto.RequestDto;
-import com.acintyo.dto.TransactionDto;
-import com.acintyo.dto.UpdateRequestDto;
-import com.acintyo.entity.LedgerHeader;
-import com.acintyo.entity.LedgerTransaction;
-import com.acintyo.entity.LedgerTransactionHistory;
-import com.acintyo.repository.ILedgerHeaderRepository;
-import com.acintyo.repository.ILedgerTransactionHistoryRepository;
-import com.acintyo.repository.ILedgerTransactionRepository;
-
+import ai.acintyo.transactions.dto.HeaderDto;
+import ai.acintyo.transactions.dto.HistoryDto;
+import ai.acintyo.transactions.dto.LedgerResponse;
+import ai.acintyo.transactions.dto.RequestDto;
+import ai.acintyo.transactions.dto.TransactionDto;
+import ai.acintyo.transactions.dto.UpdateRequestDto;
+import ai.acintyo.transactions.entity.LedgerHeader;
+import ai.acintyo.transactions.entity.LedgerTransaction;
+import ai.acintyo.transactions.entity.LedgerTransactionHistory;
+import ai.acintyo.transactions.exceptions.TransactionFoundException;
+import ai.acintyo.transactions.exceptions.TransactionNotFoundException;
+import ai.acintyo.transactions.repository.ILedgerHeaderRepository;
+import ai.acintyo.transactions.repository.ILedgerTransactionHistoryRepository;
+import ai.acintyo.transactions.repository.ILedgerTransactionRepository;
 import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 
@@ -47,7 +48,7 @@ public class TransactionMgntServiceImpl implements ITransactionMgntService {
 		Optional<LedgerTransaction> transId = transactionRepository.findByTransId(dto.getTransId());
 		if(transId.isPresent()) {
 			log.debug("TransId is already Present. Throwing TransactionNotFoundException");
-			throw new TransactionNotFoundException("TransId is already Present. Please send unique value");
+			throw new TransactionFoundException("TransId is already Present. Please send unique value");
 		}
 		//checking whether a user is already present or not
 		Optional<LedgerHeader> optional = headerRepository.findByUserIdIgnoreCaseAndStoreIdIgnoreCase
@@ -185,11 +186,11 @@ public class TransactionMgntServiceImpl implements ITransactionMgntService {
 	@Override
 	public HeaderDto findHeader(String userId, String storeId) {
 		Optional<LedgerHeader> optional = headerRepository.findByUserIdIgnoreCaseAndStoreIdIgnoreCase(userId, storeId);
-		if(optional.isPresent()) return new HeaderDto(optional.get());
-		else return null;
+		if(optional.isPresent()) 
+			return new HeaderDto(optional.get());
+		else return new HeaderDto();
 	}
 
-	@SuppressWarnings("null")
 	@Override
 	public List<TransactionDto> findAllTransactionsofUser
 		(String userId, String storeId,int page, int size, String sortBy, String order) {
@@ -197,12 +198,11 @@ public class TransactionMgntServiceImpl implements ITransactionMgntService {
 				.findByHeaderUserIdAndStoreId(userId, storeId,PageRequest
 				.of(page, size, order.equalsIgnoreCase("DESC")?Direction.DESC:Direction.ASC, sortBy));
 //		list.forEach(tr->tr.setHeader(null));
-		List<TransactionDto> transactionDto = null;
+		List<TransactionDto> transactionDto =  new ArrayList<>();
 		listOfTransactions.forEach(e->transactionDto.add(new TransactionDto(e)));
 		return transactionDto;
 	}
 
-	@SuppressWarnings("null")
 	@Override
 	public List<TransactionDto> findAllTransactionsofUserBetween
 		(String userId, String storeId, LocalDateTime fromDate, LocalDateTime toDate,  
@@ -211,24 +211,22 @@ public class TransactionMgntServiceImpl implements ITransactionMgntService {
 				.findByHeaderUserIdAndStoreIdAndTransactionDateBetween(userId, storeId, fromDate, toDate, PageRequest
 				.of(page, size, order.equalsIgnoreCase("DESC")?Direction.DESC:Direction.ASC, sortBy));
 //		listOfTransactions.forEach(tr->tr.setHeader(null));
-		List<TransactionDto> transactionDto = null;
+		List<TransactionDto> transactionDto =  new ArrayList<>();
 		listOfTransactions.forEach(e->transactionDto.add(new TransactionDto(e)));
 		return transactionDto;
 	}
 
-	@SuppressWarnings("null")
 	@Override
 	public List<HistoryDto> findAllTransactionsHistoryofUser
 		(String userId, String storeId, int page, int size, String sortBy, String order) {
 		List<LedgerTransactionHistory> history = historyRepository
 				.findByUserIdAndStoreId(userId, storeId, PageRequest
 				.of(page, size, order.equalsIgnoreCase("DESC")?Direction.DESC:Direction.ASC, sortBy));
-		List<HistoryDto> historyDto = null;
+		List<HistoryDto> historyDto =  new ArrayList<>();
 		history.forEach(e->historyDto.add(new HistoryDto(e)));
 		return historyDto;
 	}
 
-	@SuppressWarnings("null")
 	@Override
 	public List<HistoryDto> findAllTransactionsHistoryofUserBetween
 		(String userId, String storeId, LocalDateTime fromDate, LocalDateTime toDate,
@@ -236,7 +234,7 @@ public class TransactionMgntServiceImpl implements ITransactionMgntService {
 		List<LedgerTransactionHistory> history = historyRepository
 					.findByUserIdAndStoreIdAndTransactionDateBetween(userId, storeId, fromDate, toDate,PageRequest
 					.of(page, size, order.equalsIgnoreCase("DESC")?Direction.DESC:Direction.ASC, sortBy));		
-		List<HistoryDto> historyDto = null;
+		List<HistoryDto> historyDto = new ArrayList<>();
 		history.forEach(e->historyDto.add(new HistoryDto(e)));
 		return historyDto;
 	}

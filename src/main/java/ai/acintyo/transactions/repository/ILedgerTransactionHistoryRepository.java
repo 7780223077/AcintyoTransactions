@@ -1,4 +1,4 @@
-package com.acintyo.repository;
+package ai.acintyo.transactions.repository;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.acintyo.entity.LedgerTransactionHistory;
+import ai.acintyo.transactions.entity.LedgerTransactionHistory;
 
 public interface ILedgerTransactionHistoryRepository extends JpaRepository<LedgerTransactionHistory, Integer>{
 	List<LedgerTransactionHistory> findByUserIdAndStoreIdAndTransactionDateBetween

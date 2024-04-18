@@ -1,4 +1,4 @@
-package com.acintyo;
+package ai.acintyo.transactions;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

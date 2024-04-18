@@ -1,4 +1,4 @@
-package com.acintyo.dto;
+package ai.acintyo.transactions.dto;
 
 import java.io.Serializable;
 

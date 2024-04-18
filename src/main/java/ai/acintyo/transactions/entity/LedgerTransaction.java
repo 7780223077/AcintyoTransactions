@@ -1,4 +1,4 @@
-package com.acintyo.entity;
+package ai.acintyo.transactions.entity;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -6,9 +6,8 @@ import java.time.LocalDateTime;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import com.acintyo.dto.RequestDto;
-import com.acintyo.dto.UpdateRequestDto;
-
+import ai.acintyo.transactions.dto.RequestDto;
+import ai.acintyo.transactions.dto.UpdateRequestDto;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

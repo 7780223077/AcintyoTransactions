@@ -1,4 +1,4 @@
-package com.acintyo.dto;
+package ai.acintyo.transactions.dto;
 
 import java.time.LocalDateTime;
 
@@ -9,11 +9,8 @@ import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 @Data
-public class UpdateRequestDto {
-	
-	@NotNull(message = "{validation.notnull.record-id}")
-	private Integer recordId;
-	
+public class RequestDto {
+
 	@NotBlank(message = "{validation.notblank.trans-id}")
 	private String transId;
 
@@ -37,14 +34,14 @@ public class UpdateRequestDto {
 	@NotNull(message = "{validation.notnull.transaction-date}")
 	private LocalDateTime transactionDate;
 
-	@NotBlank(message = "{validation.notblank.updated-by}")
-	private String updatedBy;
+	@NotBlank(message = "{validation.notblank.inserted-by}")
+	private String insertedBy;
 	
 	public void convertToUpperCase() {
 		this.transId = this.transId.toUpperCase();
 		this.userId = this.userId.toUpperCase();
 		this.storeId = this.storeId.toUpperCase();
 		this.note = this.note.toUpperCase();
-		this.updatedBy = this.updatedBy.toUpperCase();
+		this.insertedBy = this.insertedBy.toUpperCase();
 	}
 }

@@ -1,4 +1,4 @@
-package com.acintyo.entity;
+package ai.acintyo.transactions.entity;
 
 
 import java.time.LocalDateTime;
