@@ -2,14 +2,15 @@ package ai.acintyo.transactions.dto;
 
 import java.time.LocalDateTime;
 
-import ai.acintyo.transactions.entity.LedgerHeader;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class HeaderDto {
 
 	private String userId;
@@ -26,13 +27,4 @@ public class HeaderDto {
 	
 	private LocalDateTime updatedOn;
 
-	public HeaderDto(LedgerHeader header) {
-		this.userId = header.getUserId();
-		this.storeId = header.getStoreId();
-		this.description = header.getDescription();
-		this.headerAmt = header.getHeaderAmt();
-		this.note = header.getNote();
-		this.insertedOn = header.getInsertedOn();
-		this.updatedOn = header.getUpdatedOn();
-	}
 }

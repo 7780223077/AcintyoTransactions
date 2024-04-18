@@ -478,3 +478,532 @@ java.lang.IllegalStateException: Optional int parameter 'page' is present but ca
 2024-04-18T16:59:36.004+05:30  INFO 13052 --- [Acintyo] [http-nio-4040-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-04-18T16:59:36.004+05:30  INFO 13052 --- [Acintyo] [http-nio-4040-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2024-04-18T16:59:36.006+05:30  INFO 13052 --- [Acintyo] [http-nio-4040-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-04-18T17:02:49.631+05:30  INFO 28948 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Starting AcintyoApplication using Java 17.0.9 with PID 28948 (D:\Acintyo\Acintyo\target\classes started by 91778 in D:\Acintyo\Acintyo)
+2024-04-18T17:02:49.633+05:30 DEBUG 28948 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-04-18T17:02:49.633+05:30  INFO 28948 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : No active profile set, falling back to 1 default profile: "default"
+2024-04-18T17:02:49.681+05:30  INFO 28948 --- [Acintyo] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\91778\.m2\repository\com\oracle\database\jdbc\ojdbc11\21.9.0.0\ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/C:/Users/91778/.m2/repository/com/oracle/database/jdbc/ojdbc11/21.9.0.0/oraclepki.jar
+2024-04-18T17:02:49.681+05:30  INFO 28948 --- [Acintyo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-18T17:02:49.682+05:30  INFO 28948 --- [Acintyo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-18T17:02:50.483+05:30  INFO 28948 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-18T17:02:50.542+05:30  INFO 28948 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 3 JPA repository interfaces.
+2024-04-18T17:02:51.078+05:30  INFO 28948 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 4040 (http)
+2024-04-18T17:02:51.095+05:30  INFO 28948 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-18T17:02:51.096+05:30  INFO 28948 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-18T17:02:51.146+05:30  INFO 28948 --- [Acintyo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-18T17:02:51.146+05:30  INFO 28948 --- [Acintyo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1464 ms
+2024-04-18T17:02:51.303+05:30  INFO 28948 --- [Acintyo] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-18T17:02:51.358+05:30  INFO 28948 --- [Acintyo] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-18T17:02:51.403+05:30  INFO 28948 --- [Acintyo] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-18T17:02:51.620+05:30  INFO 28948 --- [Acintyo] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-18T17:02:51.657+05:30  INFO 28948 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-18T17:02:52.000+05:30  INFO 28948 --- [Acintyo] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@26d3be66
+2024-04-18T17:02:52.004+05:30  INFO 28948 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-18T17:02:52.170+05:30  WARN 28948 --- [Acintyo] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-18T17:02:53.172+05:30  INFO 28948 --- [Acintyo] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-18T17:02:59.761+05:30  INFO 28948 --- [Acintyo] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-18T17:03:00.296+05:30  WARN 28948 --- [Acintyo] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-18T17:03:00.787+05:30  INFO 28948 --- [Acintyo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-18T17:03:00.850+05:30  INFO 28948 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 4040 (http) with context path ''
+2024-04-18T17:03:00.869+05:30  INFO 28948 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Started AcintyoApplication in 11.618 seconds (process running for 12.456)
+2024-04-18T17:03:00.875+05:30  INFO 28948 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Application Started successfully
+2024-04-18T17:03:10.328+05:30  INFO 28948 --- [Acintyo] [http-nio-4040-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-18T17:03:10.328+05:30  INFO 28948 --- [Acintyo] [http-nio-4040-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-18T17:03:10.329+05:30  INFO 28948 --- [Acintyo] [http-nio-4040-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-04-18T17:03:21.157+05:30  INFO 1072 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Starting AcintyoApplication using Java 17.0.9 with PID 1072 (D:\Acintyo\Acintyo\target\classes started by 91778 in D:\Acintyo\Acintyo)
+2024-04-18T17:03:21.159+05:30 DEBUG 1072 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-04-18T17:03:21.159+05:30  INFO 1072 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : No active profile set, falling back to 1 default profile: "default"
+2024-04-18T17:03:21.211+05:30  INFO 1072 --- [Acintyo] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\91778\.m2\repository\com\oracle\database\jdbc\ojdbc11\21.9.0.0\ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/C:/Users/91778/.m2/repository/com/oracle/database/jdbc/ojdbc11/21.9.0.0/oraclepki.jar
+2024-04-18T17:03:21.212+05:30  INFO 1072 --- [Acintyo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-18T17:03:21.212+05:30  INFO 1072 --- [Acintyo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-18T17:03:22.054+05:30  INFO 1072 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-18T17:03:22.111+05:30  INFO 1072 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 3 JPA repository interfaces.
+2024-04-18T17:03:22.659+05:30  INFO 1072 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 4040 (http)
+2024-04-18T17:03:22.671+05:30  INFO 1072 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-18T17:03:22.671+05:30  INFO 1072 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-18T17:03:22.720+05:30  INFO 1072 --- [Acintyo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-18T17:03:22.720+05:30  INFO 1072 --- [Acintyo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1508 ms
+2024-04-18T17:03:22.903+05:30  INFO 1072 --- [Acintyo] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-18T17:03:22.954+05:30  INFO 1072 --- [Acintyo] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-18T17:03:22.980+05:30  INFO 1072 --- [Acintyo] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-18T17:03:23.259+05:30  INFO 1072 --- [Acintyo] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-18T17:03:23.298+05:30  INFO 1072 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-18T17:03:23.607+05:30  INFO 1072 --- [Acintyo] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@70c94966
+2024-04-18T17:03:23.610+05:30  INFO 1072 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-18T17:03:23.772+05:30  WARN 1072 --- [Acintyo] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-18T17:03:24.778+05:30  INFO 1072 --- [Acintyo] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-18T17:03:31.448+05:30  INFO 1072 --- [Acintyo] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-18T17:03:32.195+05:30  WARN 1072 --- [Acintyo] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-18T17:03:32.605+05:30  INFO 1072 --- [Acintyo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-18T17:03:32.658+05:30  INFO 1072 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 4040 (http) with context path ''
+2024-04-18T17:03:32.671+05:30  INFO 1072 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Started AcintyoApplication in 11.869 seconds (process running for 12.699)
+2024-04-18T17:03:32.675+05:30  INFO 1072 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Application Started successfully
+2024-04-18T17:03:43.739+05:30  INFO 1072 --- [Acintyo] [http-nio-4040-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-18T17:03:43.740+05:30  INFO 1072 --- [Acintyo] [http-nio-4040-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-18T17:03:43.741+05:30  INFO 1072 --- [Acintyo] [http-nio-4040-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-04-18T17:03:50.007+05:30  INFO 1072 --- [Acintyo] [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-04-18T17:03:50.041+05:30  INFO 1072 --- [Acintyo] [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-18T17:03:50.051+05:30  INFO 1072 --- [Acintyo] [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-18T17:03:50.069+05:30  INFO 1072 --- [Acintyo] [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-04-18T17:08:13.790+05:30  INFO 7232 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Starting AcintyoApplication using Java 17.0.9 with PID 7232 (D:\Acintyo\Acintyo\target\classes started by 91778 in D:\Acintyo\Acintyo)
+2024-04-18T17:08:13.797+05:30 DEBUG 7232 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-04-18T17:08:13.798+05:30  INFO 7232 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : No active profile set, falling back to 1 default profile: "default"
+2024-04-18T17:08:13.850+05:30  INFO 7232 --- [Acintyo] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\91778\.m2\repository\com\oracle\database\jdbc\ojdbc11\21.9.0.0\ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/C:/Users/91778/.m2/repository/com/oracle/database/jdbc/ojdbc11/21.9.0.0/oraclepki.jar
+2024-04-18T17:08:13.851+05:30  INFO 7232 --- [Acintyo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-18T17:08:13.851+05:30  INFO 7232 --- [Acintyo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-18T17:08:14.755+05:30  INFO 7232 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-18T17:08:14.822+05:30  INFO 7232 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 3 JPA repository interfaces.
+2024-04-18T17:08:15.858+05:30  INFO 7232 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 4040 (http)
+2024-04-18T17:08:15.890+05:30  INFO 7232 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-18T17:08:15.891+05:30  INFO 7232 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-18T17:08:16.010+05:30  INFO 7232 --- [Acintyo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-18T17:08:16.010+05:30  INFO 7232 --- [Acintyo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2159 ms
+2024-04-18T17:08:16.295+05:30  INFO 7232 --- [Acintyo] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-18T17:08:16.388+05:30  INFO 7232 --- [Acintyo] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-18T17:08:16.467+05:30  INFO 7232 --- [Acintyo] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-18T17:08:16.923+05:30  INFO 7232 --- [Acintyo] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-18T17:08:16.957+05:30  INFO 7232 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-18T17:08:17.247+05:30  INFO 7232 --- [Acintyo] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@1ac11a66
+2024-04-18T17:08:17.249+05:30  INFO 7232 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-18T17:08:17.397+05:30  WARN 7232 --- [Acintyo] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-18T17:08:18.693+05:30  INFO 7232 --- [Acintyo] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-18T17:08:25.223+05:30  INFO 7232 --- [Acintyo] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-18T17:08:25.695+05:30  WARN 7232 --- [Acintyo] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-18T17:08:26.120+05:30  INFO 7232 --- [Acintyo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-18T17:08:26.165+05:30  INFO 7232 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 4040 (http) with context path ''
+2024-04-18T17:08:26.178+05:30  INFO 7232 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Started AcintyoApplication in 12.795 seconds (process running for 13.659)
+2024-04-18T17:08:26.181+05:30  INFO 7232 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Application Started successfully
+2024-04-18T17:08:56.307+05:30  INFO 12352 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Starting AcintyoApplication using Java 17.0.9 with PID 12352 (D:\Acintyo\Acintyo\target\classes started by 91778 in D:\Acintyo\Acintyo)
+2024-04-18T17:08:56.311+05:30 DEBUG 12352 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-04-18T17:08:56.313+05:30  INFO 12352 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : No active profile set, falling back to 1 default profile: "default"
+2024-04-18T17:08:56.378+05:30  INFO 12352 --- [Acintyo] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\91778\.m2\repository\com\oracle\database\jdbc\ojdbc11\21.9.0.0\ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/C:/Users/91778/.m2/repository/com/oracle/database/jdbc/ojdbc11/21.9.0.0/oraclepki.jar
+2024-04-18T17:08:56.378+05:30  INFO 12352 --- [Acintyo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-18T17:08:56.378+05:30  INFO 12352 --- [Acintyo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-18T17:08:57.166+05:30  INFO 12352 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-18T17:08:57.235+05:30  INFO 12352 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 3 JPA repository interfaces.
+2024-04-18T17:08:57.927+05:30  INFO 12352 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 4040 (http)
+2024-04-18T17:08:57.954+05:30  INFO 12352 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-18T17:08:57.955+05:30  INFO 12352 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-18T17:08:58.068+05:30  INFO 12352 --- [Acintyo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-18T17:08:58.069+05:30  INFO 12352 --- [Acintyo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1690 ms
+2024-04-18T17:08:58.260+05:30  INFO 12352 --- [Acintyo] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-18T17:08:58.339+05:30  INFO 12352 --- [Acintyo] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-18T17:08:58.373+05:30  INFO 12352 --- [Acintyo] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-18T17:08:58.653+05:30  INFO 12352 --- [Acintyo] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-18T17:08:58.680+05:30  INFO 12352 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-18T17:08:58.982+05:30  INFO 12352 --- [Acintyo] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@6fc2eae7
+2024-04-18T17:08:58.985+05:30  INFO 12352 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-18T17:08:59.171+05:30  WARN 12352 --- [Acintyo] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-18T17:09:00.361+05:30  INFO 12352 --- [Acintyo] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-18T17:09:07.592+05:30  INFO 12352 --- [Acintyo] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-18T17:09:08.601+05:30  WARN 12352 --- [Acintyo] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-18T17:09:09.444+05:30  INFO 12352 --- [Acintyo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-18T17:09:09.517+05:30  INFO 12352 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 4040 (http) with context path ''
+2024-04-18T17:09:09.537+05:30  INFO 12352 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Started AcintyoApplication in 13.865 seconds (process running for 15.207)
+2024-04-18T17:09:09.542+05:30  INFO 12352 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Application Started successfully
+2024-04-18T17:09:14.664+05:30  INFO 12352 --- [Acintyo] [http-nio-4040-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-18T17:09:14.664+05:30  INFO 12352 --- [Acintyo] [http-nio-4040-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-18T17:09:14.667+05:30  INFO 12352 --- [Acintyo] [http-nio-4040-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-04-18T17:10:22.941+05:30  INFO 27476 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Starting AcintyoApplication using Java 17.0.9 with PID 27476 (D:\Acintyo\Acintyo\target\classes started by 91778 in D:\Acintyo\Acintyo)
+2024-04-18T17:10:22.945+05:30 DEBUG 27476 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-04-18T17:10:22.946+05:30  INFO 27476 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : No active profile set, falling back to 1 default profile: "default"
+2024-04-18T17:10:23.006+05:30  INFO 27476 --- [Acintyo] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\91778\.m2\repository\com\oracle\database\jdbc\ojdbc11\21.9.0.0\ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/C:/Users/91778/.m2/repository/com/oracle/database/jdbc/ojdbc11/21.9.0.0/oraclepki.jar
+2024-04-18T17:10:23.007+05:30  INFO 27476 --- [Acintyo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-18T17:10:23.007+05:30  INFO 27476 --- [Acintyo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-18T17:10:23.998+05:30  INFO 27476 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-18T17:10:24.083+05:30  INFO 27476 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 73 ms. Found 3 JPA repository interfaces.
+2024-04-18T17:10:24.891+05:30  INFO 27476 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 4040 (http)
+2024-04-18T17:10:24.911+05:30  INFO 27476 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-18T17:10:24.912+05:30  INFO 27476 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-18T17:10:24.981+05:30  INFO 27476 --- [Acintyo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-18T17:10:24.982+05:30  INFO 27476 --- [Acintyo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1974 ms
+2024-04-18T17:10:25.232+05:30  INFO 27476 --- [Acintyo] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-18T17:10:25.312+05:30  INFO 27476 --- [Acintyo] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-18T17:10:25.363+05:30  INFO 27476 --- [Acintyo] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-18T17:10:25.665+05:30  INFO 27476 --- [Acintyo] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-18T17:10:25.710+05:30  INFO 27476 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-18T17:10:26.096+05:30  INFO 27476 --- [Acintyo] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@6e08786d
+2024-04-18T17:10:26.101+05:30  INFO 27476 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-18T17:10:26.336+05:30  WARN 27476 --- [Acintyo] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-18T17:10:27.790+05:30  INFO 27476 --- [Acintyo] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-18T17:10:34.559+05:30  INFO 27476 --- [Acintyo] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-18T17:10:35.202+05:30  WARN 27476 --- [Acintyo] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-18T17:10:35.674+05:30  INFO 27476 --- [Acintyo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-18T17:10:35.728+05:30  INFO 27476 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 4040 (http) with context path ''
+2024-04-18T17:10:35.743+05:30  INFO 27476 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Started AcintyoApplication in 13.355 seconds (process running for 14.342)
+2024-04-18T17:10:35.749+05:30  INFO 27476 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Application Started successfully
+2024-04-18T17:10:41.079+05:30  INFO 27476 --- [Acintyo] [http-nio-4040-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-18T17:10:41.079+05:30  INFO 27476 --- [Acintyo] [http-nio-4040-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-18T17:10:41.082+05:30  INFO 27476 --- [Acintyo] [http-nio-4040-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-04-18T17:38:18.975+05:30  INFO 2244 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Starting AcintyoApplication using Java 17.0.9 with PID 2244 (D:\Acintyo\Acintyo\target\classes started by 91778 in D:\Acintyo\Acintyo)
+2024-04-18T17:38:18.978+05:30 DEBUG 2244 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-04-18T17:38:18.980+05:30  INFO 2244 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : No active profile set, falling back to 1 default profile: "default"
+2024-04-18T17:38:19.053+05:30  INFO 2244 --- [Acintyo] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\91778\.m2\repository\com\oracle\database\jdbc\ojdbc11\21.9.0.0\ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/C:/Users/91778/.m2/repository/com/oracle/database/jdbc/ojdbc11/21.9.0.0/oraclepki.jar
+2024-04-18T17:38:19.053+05:30  INFO 2244 --- [Acintyo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-18T17:38:19.054+05:30  INFO 2244 --- [Acintyo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-18T17:38:20.164+05:30  INFO 2244 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-18T17:38:20.224+05:30  INFO 2244 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 3 JPA repository interfaces.
+2024-04-18T17:38:20.785+05:30  INFO 2244 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 4040 (http)
+2024-04-18T17:38:20.795+05:30  INFO 2244 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-18T17:38:20.796+05:30  INFO 2244 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-18T17:38:20.874+05:30  INFO 2244 --- [Acintyo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-18T17:38:20.875+05:30  INFO 2244 --- [Acintyo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1821 ms
+2024-04-18T17:38:21.078+05:30  INFO 2244 --- [Acintyo] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-18T17:38:21.141+05:30  INFO 2244 --- [Acintyo] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-18T17:38:21.182+05:30  INFO 2244 --- [Acintyo] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-18T17:38:21.436+05:30  INFO 2244 --- [Acintyo] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-18T17:38:21.477+05:30  INFO 2244 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-18T17:38:21.797+05:30  INFO 2244 --- [Acintyo] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@2a3899b3
+2024-04-18T17:38:21.802+05:30  INFO 2244 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-18T17:38:21.948+05:30  WARN 2244 --- [Acintyo] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-18T17:38:22.924+05:30  INFO 2244 --- [Acintyo] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-18T17:38:30.128+05:30  INFO 2244 --- [Acintyo] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-18T17:38:30.655+05:30  WARN 2244 --- [Acintyo] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-18T17:38:31.189+05:30  INFO 2244 --- [Acintyo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-18T17:38:31.242+05:30  INFO 2244 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 4040 (http) with context path ''
+2024-04-18T17:38:31.254+05:30  INFO 2244 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Started AcintyoApplication in 12.856 seconds (process running for 14.062)
+2024-04-18T17:38:31.258+05:30  INFO 2244 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Application Started successfully
+2024-04-18T17:39:13.702+05:30  INFO 2244 --- [Acintyo] [http-nio-4040-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-18T17:39:13.703+05:30  INFO 2244 --- [Acintyo] [http-nio-4040-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-18T17:39:13.706+05:30  INFO 2244 --- [Acintyo] [http-nio-4040-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-04-18T17:52:57.057+05:30  INFO 27984 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Starting AcintyoApplication using Java 17.0.9 with PID 27984 (D:\Acintyo\Acintyo\target\classes started by 91778 in D:\Acintyo\Acintyo)
+2024-04-18T17:52:57.060+05:30 DEBUG 27984 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-04-18T17:52:57.061+05:30  INFO 27984 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : No active profile set, falling back to 1 default profile: "default"
+2024-04-18T17:52:57.119+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\91778\.m2\repository\com\oracle\database\jdbc\ojdbc11\21.9.0.0\ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/C:/Users/91778/.m2/repository/com/oracle/database/jdbc/ojdbc11/21.9.0.0/oraclepki.jar
+2024-04-18T17:52:57.119+05:30  INFO 27984 --- [Acintyo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-18T17:52:57.119+05:30  INFO 27984 --- [Acintyo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-18T17:52:57.768+05:30  INFO 27984 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-18T17:52:57.809+05:30  INFO 27984 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 3 JPA repository interfaces.
+2024-04-18T17:52:58.463+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 4040 (http)
+2024-04-18T17:52:58.485+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-18T17:52:58.486+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-18T17:52:58.615+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-18T17:52:58.616+05:30  INFO 27984 --- [Acintyo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1496 ms
+2024-04-18T17:52:58.964+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-18T17:52:59.095+05:30  INFO 27984 --- [Acintyo] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-18T17:52:59.132+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-18T17:52:59.324+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-18T17:52:59.351+05:30  INFO 27984 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-18T17:52:59.638+05:30  INFO 27984 --- [Acintyo] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@16d9bac1
+2024-04-18T17:52:59.641+05:30  INFO 27984 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-18T17:52:59.883+05:30  WARN 27984 --- [Acintyo] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-18T17:53:00.889+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-18T17:53:08.167+05:30  INFO 27984 --- [Acintyo] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-18T17:53:08.715+05:30  WARN 27984 --- [Acintyo] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-18T17:53:09.106+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-18T17:53:09.148+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 4040 (http) with context path ''
+2024-04-18T17:53:09.161+05:30  INFO 27984 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Started AcintyoApplication in 12.428 seconds (process running for 13.214)
+2024-04-18T17:53:09.164+05:30  INFO 27984 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Application Started successfully
+2024-04-18T17:53:57.311+05:30  INFO 27984 --- [Acintyo] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-04-18T17:53:57.354+05:30  INFO 27984 --- [Acintyo] [Thread-8] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-18T17:53:57.362+05:30  INFO 27984 --- [Acintyo] [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-18T17:53:57.395+05:30  INFO 27984 --- [Acintyo] [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-04-18T17:53:57.472+05:30  INFO 27984 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Starting AcintyoApplication using Java 17.0.9 with PID 27984 (D:\Acintyo\Acintyo\target\classes started by 91778 in D:\Acintyo\Acintyo)
+2024-04-18T17:53:57.472+05:30 DEBUG 27984 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-04-18T17:53:57.472+05:30  INFO 27984 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : No active profile set, falling back to 1 default profile: "default"
+2024-04-18T17:53:57.617+05:30  INFO 27984 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-18T17:53:57.629+05:30  INFO 27984 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 3 JPA repository interfaces.
+2024-04-18T17:53:57.726+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 4040 (http)
+2024-04-18T17:53:57.726+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-18T17:53:57.727+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-18T17:53:57.754+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-18T17:53:57.754+05:30  INFO 27984 --- [Acintyo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 281 ms
+2024-04-18T17:53:57.779+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-18T17:53:57.781+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-18T17:53:57.784+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-18T17:53:57.784+05:30  INFO 27984 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-04-18T17:53:57.837+05:30  INFO 27984 --- [Acintyo] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection oracle.jdbc.driver.T4CConnection@568780f
+2024-04-18T17:53:57.838+05:30  INFO 27984 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-04-18T17:53:57.841+05:30  WARN 27984 --- [Acintyo] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-18T17:53:57.921+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-18T17:54:04.344+05:30  INFO 27984 --- [Acintyo] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-18T17:54:04.506+05:30  WARN 27984 --- [Acintyo] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-18T17:54:04.590+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-18T17:54:04.608+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 4040 (http) with context path ''
+2024-04-18T17:54:04.621+05:30  INFO 27984 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Started AcintyoApplication in 7.169 seconds (process running for 68.674)
+2024-04-18T17:54:04.624+05:30  INFO 27984 --- [Acintyo] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-04-18T17:54:04.625+05:30  INFO 27984 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Application Started successfully
+2024-04-18T17:55:23.845+05:30  INFO 27984 --- [Acintyo] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-04-18T17:55:23.870+05:30  INFO 27984 --- [Acintyo] [Thread-10] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-18T17:55:23.873+05:30  INFO 27984 --- [Acintyo] [Thread-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-04-18T17:55:23.887+05:30  INFO 27984 --- [Acintyo] [Thread-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-04-18T17:55:23.967+05:30  INFO 27984 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Starting AcintyoApplication using Java 17.0.9 with PID 27984 (D:\Acintyo\Acintyo\target\classes started by 91778 in D:\Acintyo\Acintyo)
+2024-04-18T17:55:23.968+05:30 DEBUG 27984 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-04-18T17:55:23.968+05:30  INFO 27984 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : No active profile set, falling back to 1 default profile: "default"
+2024-04-18T17:55:24.093+05:30  INFO 27984 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-18T17:55:24.104+05:30  INFO 27984 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 3 JPA repository interfaces.
+2024-04-18T17:55:24.166+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 4040 (http)
+2024-04-18T17:55:24.166+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-18T17:55:24.166+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-18T17:55:24.183+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-18T17:55:24.183+05:30  INFO 27984 --- [Acintyo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 214 ms
+2024-04-18T17:55:24.209+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-18T17:55:24.211+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-18T17:55:24.214+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-18T17:55:24.215+05:30  INFO 27984 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-04-18T17:55:24.268+05:30  INFO 27984 --- [Acintyo] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection oracle.jdbc.driver.T4CConnection@73af290f
+2024-04-18T17:55:24.268+05:30  INFO 27984 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2024-04-18T17:55:24.270+05:30  WARN 27984 --- [Acintyo] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-18T17:55:24.326+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-18T17:55:31.128+05:30  INFO 27984 --- [Acintyo] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-18T17:55:31.259+05:30  WARN 27984 --- [Acintyo] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-18T17:55:31.341+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-18T17:55:31.352+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 4040 (http) with context path ''
+2024-04-18T17:55:31.364+05:30  INFO 27984 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Started AcintyoApplication in 7.413 seconds (process running for 155.417)
+2024-04-18T17:55:31.366+05:30  INFO 27984 --- [Acintyo] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-04-18T17:55:31.366+05:30  INFO 27984 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Application Started successfully
+2024-04-18T17:55:43.569+05:30  INFO 27984 --- [Acintyo] [http-nio-4040-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-18T17:55:43.570+05:30  INFO 27984 --- [Acintyo] [http-nio-4040-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-18T17:55:43.570+05:30  INFO 27984 --- [Acintyo] [http-nio-4040-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-04-18T17:55:43.706+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-2] t.c.TransactionsRestOperationsController : New Transaction started
+2024-04-18T17:55:43.713+05:30  INFO 27984 --- [Acintyo] [http-nio-4040-exec-2] a.a.t.s.TransactionMgntServiceImpl       : newTransaction() method is invoked 
+2024-04-18T17:55:43.955+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-2] a.a.t.s.TransactionMgntServiceImpl       : User is already Present LedgerHeader(userId=USER2, storeId=STORE1, description=NEFT, headerAmt=4000.0, note=DR, insertedOn=2024-04-18T16:34:52.958260, updatedOn=2024-04-18T16:42:36.494038)
+2024-04-18T17:55:43.955+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-2] a.a.t.s.TransactionMgntServiceImpl       : old Note = DR and new Note = DR 
+2024-04-18T17:55:43.955+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-2] a.a.t.s.TransactionMgntServiceImpl       : Header after Updation LedgerHeader(userId=USER2, storeId=STORE1, description=NEFT, headerAmt=5000.0, note=DR, insertedOn=2024-04-18T16:34:52.958260, updatedOn=2024-04-18T16:42:36.494038)
+2024-04-18T17:55:43.955+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-2] a.a.t.s.TransactionMgntServiceImpl       : Transfering data from DTO class to LedgerTransaction entity class
+2024-04-18T17:55:43.955+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-2] a.a.t.s.TransactionMgntServiceImpl       : Header added to Transaction
+2024-04-18T17:55:43.996+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-2] a.a.t.s.TransactionMgntServiceImpl       : History details are saved LedgerTransactionHistory(recordId=105, transId=T211, userId=USER2, storeId=STORE1, detais=NEFT, amount=1000.0, note=DR, transactionDate=2020-08-15T12:12:25, insertedBy=CUSTOMER, insertDate=null)
+2024-04-18T17:55:44.004+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-2] a.a.t.s.TransactionMgntServiceImpl       : Transaction and Header Detais are saved using Transaction 
+2024-04-18T17:55:44.011+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-2] a.a.t.s.TransactionMgntServiceImpl       : Transaction Data LedgerTransaction [recordId=105, transId=T211, storeId=STORE1, detais=NEFT, amount=1000.0, note=DR, transactionDate=2020-08-15T12:12:25, insertedBy=CUSTOMER, insertedOn=null, updatedBy=null, updatedOn=null]
+2024-04-18T17:55:44.012+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-2] a.a.t.s.TransactionMgntServiceImpl       : Header Data LedgerHeader(userId=USER2, storeId=STORE1, description=NEFT, headerAmt=5000.0, note=DR, insertedOn=2024-04-18T16:34:52.958260, updatedOn=2024-04-18T16:42:36.494038)
+2024-04-18T17:56:12.446+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-3] t.c.TransactionsRestOperationsController : New Transaction started
+2024-04-18T17:56:12.448+05:30  INFO 27984 --- [Acintyo] [http-nio-4040-exec-3] a.a.t.s.TransactionMgntServiceImpl       : newTransaction() method is invoked 
+2024-04-18T17:56:12.468+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-3] a.a.t.s.TransactionMgntServiceImpl       : TransId is already Present. Throwing TransactionNotFoundException
+2024-04-18T17:56:12.473+05:30  WARN 27984 --- [Acintyo] [http-nio-4040-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [ai.acintyo.transactions.exceptions.TransactionFoundException: TransId is already Present. Please send unique value]
+2024-04-18T17:56:18.214+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-5] t.c.TransactionsRestOperationsController : New Transaction started
+2024-04-18T17:56:18.215+05:30  INFO 27984 --- [Acintyo] [http-nio-4040-exec-5] a.a.t.s.TransactionMgntServiceImpl       : newTransaction() method is invoked 
+2024-04-18T17:56:18.222+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-5] a.a.t.s.TransactionMgntServiceImpl       : User is already Present LedgerHeader(userId=USER2, storeId=STORE1, description=NEFT, headerAmt=5000.0, note=CR, insertedOn=2024-04-18T16:34:52.958260, updatedOn=2024-04-18T17:55:44.077556)
+2024-04-18T17:56:18.223+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-5] a.a.t.s.TransactionMgntServiceImpl       : old Note = CR and new Note = CR 
+2024-04-18T17:56:18.223+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-5] a.a.t.s.TransactionMgntServiceImpl       : Header after Updation LedgerHeader(userId=USER2, storeId=STORE1, description=NEFT, headerAmt=7000.0, note=CR, insertedOn=2024-04-18T16:34:52.958260, updatedOn=2024-04-18T17:55:44.077556)
+2024-04-18T17:56:18.223+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-5] a.a.t.s.TransactionMgntServiceImpl       : Transfering data from DTO class to LedgerTransaction entity class
+2024-04-18T17:56:18.223+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-5] a.a.t.s.TransactionMgntServiceImpl       : Header added to Transaction
+2024-04-18T17:56:18.225+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-5] a.a.t.s.TransactionMgntServiceImpl       : History details are saved LedgerTransactionHistory(recordId=106, transId=T214, userId=USER2, storeId=STORE1, detais=NEFT, amount=2000.0, note=CR, transactionDate=2020-08-15T12:12:25, insertedBy=CUSTOMER, insertDate=null)
+2024-04-18T17:56:18.226+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-5] a.a.t.s.TransactionMgntServiceImpl       : Transaction and Header Detais are saved using Transaction 
+2024-04-18T17:56:18.226+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-5] a.a.t.s.TransactionMgntServiceImpl       : Transaction Data LedgerTransaction [recordId=106, transId=T214, storeId=STORE1, detais=NEFT, amount=2000.0, note=CR, transactionDate=2020-08-15T12:12:25, insertedBy=CUSTOMER, insertedOn=null, updatedBy=null, updatedOn=null]
+2024-04-18T17:56:18.226+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-5] a.a.t.s.TransactionMgntServiceImpl       : Header Data LedgerHeader(userId=USER2, storeId=STORE1, description=NEFT, headerAmt=7000.0, note=CR, insertedOn=2024-04-18T16:34:52.958260, updatedOn=2024-04-18T17:55:44.077556)
+2024-04-18T17:56:33.414+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-6] t.c.TransactionsRestOperationsController : New Transaction started
+2024-04-18T17:56:33.417+05:30  INFO 27984 --- [Acintyo] [http-nio-4040-exec-6] a.a.t.s.TransactionMgntServiceImpl       : newTransaction() method is invoked 
+2024-04-18T17:56:33.424+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-6] a.a.t.s.TransactionMgntServiceImpl       : User is already Present LedgerHeader(userId=USER2, storeId=STORE1, description=NEFT, headerAmt=7000.0, note=CR, insertedOn=2024-04-18T16:34:52.958260, updatedOn=2024-04-18T17:56:18.235051)
+2024-04-18T17:56:33.426+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-6] a.a.t.s.TransactionMgntServiceImpl       : old Note = CR and new Note = CR 
+2024-04-18T17:56:33.426+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-6] a.a.t.s.TransactionMgntServiceImpl       : Header after Updation LedgerHeader(userId=USER2, storeId=STORE1, description=NEFT, headerAmt=9000.0, note=CR, insertedOn=2024-04-18T16:34:52.958260, updatedOn=2024-04-18T17:56:18.235051)
+2024-04-18T17:56:33.426+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-6] a.a.t.s.TransactionMgntServiceImpl       : Transfering data from DTO class to LedgerTransaction entity class
+2024-04-18T17:56:33.426+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-6] a.a.t.s.TransactionMgntServiceImpl       : Header added to Transaction
+2024-04-18T17:56:33.427+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-6] a.a.t.s.TransactionMgntServiceImpl       : History details are saved LedgerTransactionHistory(recordId=107, transId=T217, userId=USER2, storeId=STORE1, detais=NEFT, amount=2000.0, note=CR, transactionDate=2020-08-15T12:12:25, insertedBy=CUSTOMER, insertDate=null)
+2024-04-18T17:56:33.429+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-6] a.a.t.s.TransactionMgntServiceImpl       : Transaction and Header Detais are saved using Transaction 
+2024-04-18T17:56:33.429+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-6] a.a.t.s.TransactionMgntServiceImpl       : Transaction Data LedgerTransaction [recordId=107, transId=T217, storeId=STORE1, detais=NEFT, amount=2000.0, note=CR, transactionDate=2020-08-15T12:12:25, insertedBy=CUSTOMER, insertedOn=null, updatedBy=null, updatedOn=null]
+2024-04-18T17:56:33.429+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-6] a.a.t.s.TransactionMgntServiceImpl       : Header Data LedgerHeader(userId=USER2, storeId=STORE1, description=NEFT, headerAmt=9000.0, note=CR, insertedOn=2024-04-18T16:34:52.958260, updatedOn=2024-04-18T17:56:18.235051)
+2024-04-18T17:56:44.173+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-8] t.c.TransactionsRestOperationsController : New Transaction started
+2024-04-18T17:56:44.175+05:30  INFO 27984 --- [Acintyo] [http-nio-4040-exec-8] a.a.t.s.TransactionMgntServiceImpl       : newTransaction() method is invoked 
+2024-04-18T17:56:44.185+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-8] a.a.t.s.TransactionMgntServiceImpl       : TransId is already Present. Throwing TransactionNotFoundException
+2024-04-18T17:56:44.187+05:30  WARN 27984 --- [Acintyo] [http-nio-4040-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [ai.acintyo.transactions.exceptions.TransactionFoundException: TransId is already Present. Please send unique value]
+2024-04-18T17:56:56.550+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-10] t.c.TransactionsRestOperationsController : New Transaction started
+2024-04-18T17:56:56.552+05:30  INFO 27984 --- [Acintyo] [http-nio-4040-exec-10] a.a.t.s.TransactionMgntServiceImpl       : newTransaction() method is invoked 
+2024-04-18T17:56:56.556+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-10] a.a.t.s.TransactionMgntServiceImpl       : User is already Present LedgerHeader(userId=USER2, storeId=STORE1, description=NEFT, headerAmt=9000.0, note=CR, insertedOn=2024-04-18T16:34:52.958260, updatedOn=2024-04-18T17:56:33.432502)
+2024-04-18T17:56:56.556+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-10] a.a.t.s.TransactionMgntServiceImpl       : old Note = CR and new Note = DR 
+2024-04-18T17:56:56.556+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-10] a.a.t.s.TransactionMgntServiceImpl       : Header after Updation LedgerHeader(userId=USER2, storeId=STORE1, description=NEFT, headerAmt=7000.0, note=CR, insertedOn=2024-04-18T16:34:52.958260, updatedOn=2024-04-18T17:56:33.432502)
+2024-04-18T17:56:56.556+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-10] a.a.t.s.TransactionMgntServiceImpl       : Transfering data from DTO class to LedgerTransaction entity class
+2024-04-18T17:56:56.556+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-10] a.a.t.s.TransactionMgntServiceImpl       : Header added to Transaction
+2024-04-18T17:56:56.557+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-10] a.a.t.s.TransactionMgntServiceImpl       : History details are saved LedgerTransactionHistory(recordId=108, transId=T212, userId=USER2, storeId=STORE1, detais=NEFT, amount=2000.0, note=DR, transactionDate=2020-08-15T12:12:25, insertedBy=CUSTOMER, insertDate=null)
+2024-04-18T17:56:56.558+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-10] a.a.t.s.TransactionMgntServiceImpl       : Transaction and Header Detais are saved using Transaction 
+2024-04-18T17:56:56.558+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-10] a.a.t.s.TransactionMgntServiceImpl       : Transaction Data LedgerTransaction [recordId=108, transId=T212, storeId=STORE1, detais=NEFT, amount=2000.0, note=DR, transactionDate=2020-08-15T12:12:25, insertedBy=CUSTOMER, insertedOn=null, updatedBy=null, updatedOn=null]
+2024-04-18T17:56:56.558+05:30 DEBUG 27984 --- [Acintyo] [http-nio-4040-exec-10] a.a.t.s.TransactionMgntServiceImpl       : Header Data LedgerHeader(userId=USER2, storeId=STORE1, description=NEFT, headerAmt=7000.0, note=CR, insertedOn=2024-04-18T16:34:52.958260, updatedOn=2024-04-18T17:56:33.432502)
+2024-04-18T17:57:22.953+05:30  INFO 27984 --- [Acintyo] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-04-18T17:57:22.974+05:30  INFO 27984 --- [Acintyo] [Thread-15] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-18T17:57:22.976+05:30  INFO 27984 --- [Acintyo] [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2024-04-18T17:57:22.990+05:30  INFO 27984 --- [Acintyo] [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2024-04-18T17:57:23.066+05:30  INFO 27984 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Starting AcintyoApplication using Java 17.0.9 with PID 27984 (D:\Acintyo\Acintyo\target\classes started by 91778 in D:\Acintyo\Acintyo)
+2024-04-18T17:57:23.066+05:30 DEBUG 27984 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-04-18T17:57:23.066+05:30  INFO 27984 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : No active profile set, falling back to 1 default profile: "default"
+2024-04-18T17:57:23.222+05:30  INFO 27984 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-18T17:57:23.231+05:30  INFO 27984 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 3 JPA repository interfaces.
+2024-04-18T17:57:23.317+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 4040 (http)
+2024-04-18T17:57:23.318+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-18T17:57:23.318+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-18T17:57:23.334+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-18T17:57:23.334+05:30  INFO 27984 --- [Acintyo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 266 ms
+2024-04-18T17:57:23.358+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-18T17:57:23.361+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-18T17:57:23.364+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-18T17:57:23.365+05:30  INFO 27984 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2024-04-18T17:57:23.424+05:30  INFO 27984 --- [Acintyo] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection oracle.jdbc.driver.T4CConnection@337d7bef
+2024-04-18T17:57:23.425+05:30  INFO 27984 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2024-04-18T17:57:23.427+05:30  WARN 27984 --- [Acintyo] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-18T17:57:23.506+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-18T17:57:29.951+05:30  INFO 27984 --- [Acintyo] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-18T17:57:30.087+05:30  WARN 27984 --- [Acintyo] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-18T17:57:30.180+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-18T17:57:30.203+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 4040 (http) with context path ''
+2024-04-18T17:57:30.212+05:30  INFO 27984 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Started AcintyoApplication in 7.164 seconds (process running for 274.266)
+2024-04-18T17:57:30.215+05:30  INFO 27984 --- [Acintyo] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-04-18T17:57:30.216+05:30  INFO 27984 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Application Started successfully
+2024-04-18T17:57:39.657+05:30  INFO 27984 --- [Acintyo] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-04-18T17:57:39.681+05:30  INFO 27984 --- [Acintyo] [Thread-26] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-18T17:57:39.682+05:30  INFO 27984 --- [Acintyo] [Thread-26] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2024-04-18T17:57:39.698+05:30  INFO 27984 --- [Acintyo] [Thread-26] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2024-04-18T17:57:39.780+05:30  INFO 27984 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Starting AcintyoApplication using Java 17.0.9 with PID 27984 (D:\Acintyo\Acintyo\target\classes started by 91778 in D:\Acintyo\Acintyo)
+2024-04-18T17:57:39.780+05:30 DEBUG 27984 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-04-18T17:57:39.780+05:30  INFO 27984 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : No active profile set, falling back to 1 default profile: "default"
+2024-04-18T17:57:39.899+05:30  INFO 27984 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-18T17:57:39.906+05:30  INFO 27984 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 3 JPA repository interfaces.
+2024-04-18T17:57:39.968+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 4040 (http)
+2024-04-18T17:57:39.968+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-18T17:57:39.968+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-18T17:57:39.986+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-18T17:57:39.986+05:30  INFO 27984 --- [Acintyo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 205 ms
+2024-04-18T17:57:40.010+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-18T17:57:40.011+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-18T17:57:40.014+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-18T17:57:40.014+05:30  INFO 27984 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2024-04-18T17:57:40.062+05:30  INFO 27984 --- [Acintyo] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection oracle.jdbc.driver.T4CConnection@64a9f0f1
+2024-04-18T17:57:40.062+05:30  INFO 27984 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2024-04-18T17:57:40.063+05:30  WARN 27984 --- [Acintyo] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-18T17:57:40.140+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-18T17:57:46.568+05:30  INFO 27984 --- [Acintyo] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-18T17:57:46.678+05:30  WARN 27984 --- [Acintyo] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-18T17:57:46.769+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-18T17:57:46.782+05:30  INFO 27984 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 4040 (http) with context path ''
+2024-04-18T17:57:46.791+05:30  INFO 27984 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Started AcintyoApplication in 7.033 seconds (process running for 290.845)
+2024-04-18T17:57:46.793+05:30  INFO 27984 --- [Acintyo] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-04-18T17:57:46.793+05:30  INFO 27984 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Application Started successfully
+2024-04-18T17:59:31.664+05:30  INFO 27984 --- [Acintyo] [RMI TCP Connection(27)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-04-18T17:59:31.691+05:30  INFO 27984 --- [Acintyo] [RMI TCP Connection(27)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-18T17:59:31.693+05:30  INFO 27984 --- [Acintyo] [RMI TCP Connection(27)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2024-04-18T17:59:31.743+05:30  INFO 27984 --- [Acintyo] [RMI TCP Connection(27)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2024-04-18T18:13:08.225+05:30  INFO 30304 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Starting AcintyoApplication using Java 17.0.9 with PID 30304 (D:\Acintyo\Acintyo\target\classes started by 91778 in D:\Acintyo\Acintyo)
+2024-04-18T18:13:08.229+05:30 DEBUG 30304 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-04-18T18:13:08.230+05:30  INFO 30304 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : No active profile set, falling back to 1 default profile: "default"
+2024-04-18T18:13:08.279+05:30  INFO 30304 --- [Acintyo] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\91778\.m2\repository\com\oracle\database\jdbc\ojdbc11\21.9.0.0\ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/C:/Users/91778/.m2/repository/com/oracle/database/jdbc/ojdbc11/21.9.0.0/oraclepki.jar
+2024-04-18T18:13:08.279+05:30  INFO 30304 --- [Acintyo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-18T18:13:08.279+05:30  INFO 30304 --- [Acintyo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-18T18:13:09.213+05:30  INFO 30304 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-18T18:13:09.282+05:30  INFO 30304 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 3 JPA repository interfaces.
+2024-04-18T18:13:09.859+05:30  INFO 30304 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 4040 (http)
+2024-04-18T18:13:09.874+05:30  INFO 30304 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-18T18:13:09.874+05:30  INFO 30304 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-18T18:13:09.935+05:30  INFO 30304 --- [Acintyo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-18T18:13:09.935+05:30  INFO 30304 --- [Acintyo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1655 ms
+2024-04-18T18:13:10.129+05:30  INFO 30304 --- [Acintyo] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-18T18:13:10.208+05:30  INFO 30304 --- [Acintyo] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-18T18:13:10.262+05:30  INFO 30304 --- [Acintyo] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-18T18:13:10.572+05:30  INFO 30304 --- [Acintyo] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-18T18:13:10.612+05:30  INFO 30304 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-18T18:13:11.162+05:30  INFO 30304 --- [Acintyo] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@75b589c5
+2024-04-18T18:13:11.167+05:30  INFO 30304 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-18T18:13:11.487+05:30  WARN 30304 --- [Acintyo] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-18T18:13:12.858+05:30  INFO 30304 --- [Acintyo] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-18T18:13:14.106+05:30  INFO 30304 --- [Acintyo] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-18T18:13:14.970+05:30  WARN 30304 --- [Acintyo] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-18T18:13:15.542+05:30  INFO 30304 --- [Acintyo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-18T18:13:15.584+05:30  INFO 30304 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 4040 (http) with context path ''
+2024-04-18T18:13:15.597+05:30  INFO 30304 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Started AcintyoApplication in 8.021 seconds (process running for 9.053)
+2024-04-18T18:13:15.600+05:30  INFO 30304 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Application Started successfully
+2024-04-18T18:13:26.541+05:30  INFO 30304 --- [Acintyo] [http-nio-4040-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-18T18:13:26.541+05:30  INFO 30304 --- [Acintyo] [http-nio-4040-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-18T18:13:26.542+05:30  INFO 30304 --- [Acintyo] [http-nio-4040-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-04-18T18:13:26.680+05:30 DEBUG 30304 --- [Acintyo] [http-nio-4040-exec-1] t.c.TransactionsRestOperationsController : New Transaction started
+2024-04-18T18:13:26.687+05:30  INFO 30304 --- [Acintyo] [http-nio-4040-exec-1] a.a.t.s.TransactionMgntServiceImpl       : newTransaction() method is invoked 
+2024-04-18T18:13:27.079+05:30 DEBUG 30304 --- [Acintyo] [http-nio-4040-exec-1] a.a.t.s.TransactionMgntServiceImpl       : User Not Found Creating new Hedaer  LedgerHeader(userId=USER2, storeId=STORE1, description=NEFT, headerAmt=0.0, note=CR, insertedOn=null, updatedOn=null)
+2024-04-18T18:13:27.080+05:30 DEBUG 30304 --- [Acintyo] [http-nio-4040-exec-1] a.a.t.s.TransactionMgntServiceImpl       : old Note = CR and new Note = DR 
+2024-04-18T18:13:27.080+05:30 DEBUG 30304 --- [Acintyo] [http-nio-4040-exec-1] a.a.t.s.TransactionMgntServiceImpl       : Header after Updation LedgerHeader(userId=USER2, storeId=STORE1, description=NEFT, headerAmt=2000.0, note=DR, insertedOn=null, updatedOn=null)
+2024-04-18T18:13:27.080+05:30 DEBUG 30304 --- [Acintyo] [http-nio-4040-exec-1] a.a.t.s.TransactionMgntServiceImpl       : Transfering data from DTO class to LedgerTransaction entity class
+2024-04-18T18:13:27.080+05:30 DEBUG 30304 --- [Acintyo] [http-nio-4040-exec-1] a.a.t.s.TransactionMgntServiceImpl       : Header added to Transaction
+2024-04-18T18:13:27.154+05:30 DEBUG 30304 --- [Acintyo] [http-nio-4040-exec-1] a.a.t.s.TransactionMgntServiceImpl       : History details are saved LedgerTransactionHistory(recordId=101, transId=T212, userId=USER2, storeId=STORE1, detais=NEFT, amount=2000.0, note=DR, transactionDate=2020-08-15T12:12:25, insertedBy=CUSTOMER, insertDate=null)
+2024-04-18T18:13:27.167+05:30 DEBUG 30304 --- [Acintyo] [http-nio-4040-exec-1] a.a.t.s.TransactionMgntServiceImpl       : Transaction and Header Detais are saved using Transaction 
+2024-04-18T18:13:27.178+05:30 DEBUG 30304 --- [Acintyo] [http-nio-4040-exec-1] a.a.t.s.TransactionMgntServiceImpl       : Transaction Data LedgerTransaction [recordId=101, transId=T212, storeId=STORE1, detais=NEFT, amount=2000.0, note=DR, transactionDate=2020-08-15T12:12:25, insertedBy=CUSTOMER, insertedOn=null, updatedBy=null, updatedOn=null]
+2024-04-18T18:13:27.178+05:30 DEBUG 30304 --- [Acintyo] [http-nio-4040-exec-1] a.a.t.s.TransactionMgntServiceImpl       : Header Data LedgerHeader(userId=USER2, storeId=STORE1, description=NEFT, headerAmt=2000.0, note=DR, insertedOn=null, updatedOn=null)
+2024-04-18T18:14:19.313+05:30 DEBUG 30304 --- [Acintyo] [http-nio-4040-exec-4] t.c.TransactionsRestOperationsController : New Transaction started
+2024-04-18T18:14:19.315+05:30  INFO 30304 --- [Acintyo] [http-nio-4040-exec-4] a.a.t.s.TransactionMgntServiceImpl       : newTransaction() method is invoked 
+2024-04-18T18:14:19.348+05:30 DEBUG 30304 --- [Acintyo] [http-nio-4040-exec-4] a.a.t.s.TransactionMgntServiceImpl       : User Not Found Creating new Hedaer  LedgerHeader(userId=USER1, storeId=STORE1, description=NEFT, headerAmt=0.0, note=CR, insertedOn=null, updatedOn=null)
+2024-04-18T18:14:19.348+05:30 DEBUG 30304 --- [Acintyo] [http-nio-4040-exec-4] a.a.t.s.TransactionMgntServiceImpl       : old Note = CR and new Note = CR 
+2024-04-18T18:14:19.348+05:30 DEBUG 30304 --- [Acintyo] [http-nio-4040-exec-4] a.a.t.s.TransactionMgntServiceImpl       : Header after Updation LedgerHeader(userId=USER1, storeId=STORE1, description=NEFT, headerAmt=1000.0, note=CR, insertedOn=null, updatedOn=null)
+2024-04-18T18:14:19.349+05:30 DEBUG 30304 --- [Acintyo] [http-nio-4040-exec-4] a.a.t.s.TransactionMgntServiceImpl       : Transfering data from DTO class to LedgerTransaction entity class
+2024-04-18T18:14:19.349+05:30 DEBUG 30304 --- [Acintyo] [http-nio-4040-exec-4] a.a.t.s.TransactionMgntServiceImpl       : Header added to Transaction
+2024-04-18T18:14:19.350+05:30 DEBUG 30304 --- [Acintyo] [http-nio-4040-exec-4] a.a.t.s.TransactionMgntServiceImpl       : History details are saved LedgerTransactionHistory(recordId=102, transId=T3000, userId=USER1, storeId=STORE1, detais=NEFT, amount=1000.0, note=CR, transactionDate=2022-09-15T12:12:25, insertedBy=FARMER, insertDate=null)
+2024-04-18T18:14:19.351+05:30 DEBUG 30304 --- [Acintyo] [http-nio-4040-exec-4] a.a.t.s.TransactionMgntServiceImpl       : Transaction and Header Detais are saved using Transaction 
+2024-04-18T18:14:19.352+05:30 DEBUG 30304 --- [Acintyo] [http-nio-4040-exec-4] a.a.t.s.TransactionMgntServiceImpl       : Transaction Data LedgerTransaction [recordId=102, transId=T3000, storeId=STORE1, detais=NEFT, amount=1000.0, note=CR, transactionDate=2022-09-15T12:12:25, insertedBy=FARMER, insertedOn=null, updatedBy=null, updatedOn=null]
+2024-04-18T18:14:19.352+05:30 DEBUG 30304 --- [Acintyo] [http-nio-4040-exec-4] a.a.t.s.TransactionMgntServiceImpl       : Header Data LedgerHeader(userId=USER1, storeId=STORE1, description=NEFT, headerAmt=1000.0, note=CR, insertedOn=null, updatedOn=null)
+2024-04-18T18:15:18.504+05:30  INFO 30304 --- [Acintyo] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-04-18T18:15:18.544+05:30  INFO 30304 --- [Acintyo] [Thread-8] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-18T18:15:18.550+05:30  INFO 30304 --- [Acintyo] [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-18T18:15:18.575+05:30  INFO 30304 --- [Acintyo] [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-04-18T18:15:18.666+05:30  INFO 30304 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Starting AcintyoApplication using Java 17.0.9 with PID 30304 (D:\Acintyo\Acintyo\target\classes started by 91778 in D:\Acintyo\Acintyo)
+2024-04-18T18:15:18.666+05:30 DEBUG 30304 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-04-18T18:15:18.667+05:30  INFO 30304 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : No active profile set, falling back to 1 default profile: "default"
+2024-04-18T18:15:18.828+05:30  INFO 30304 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-18T18:15:18.839+05:30  INFO 30304 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 3 JPA repository interfaces.
+2024-04-18T18:15:18.927+05:30  INFO 30304 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 4040 (http)
+2024-04-18T18:15:18.928+05:30  INFO 30304 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-18T18:15:18.928+05:30  INFO 30304 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-18T18:15:18.951+05:30  INFO 30304 --- [Acintyo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-18T18:15:18.951+05:30  INFO 30304 --- [Acintyo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 283 ms
+2024-04-18T18:15:18.978+05:30  INFO 30304 --- [Acintyo] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-18T18:15:18.979+05:30  INFO 30304 --- [Acintyo] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-18T18:15:18.984+05:30  INFO 30304 --- [Acintyo] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-18T18:15:18.985+05:30  INFO 30304 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-04-18T18:15:19.055+05:30  INFO 30304 --- [Acintyo] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection oracle.jdbc.driver.T4CConnection@14882630
+2024-04-18T18:15:19.055+05:30  INFO 30304 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-04-18T18:15:19.059+05:30  WARN 30304 --- [Acintyo] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-18T18:15:19.147+05:30  INFO 30304 --- [Acintyo] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-18T18:15:19.309+05:30  INFO 30304 --- [Acintyo] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-18T18:15:19.452+05:30  WARN 30304 --- [Acintyo] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-18T18:15:19.569+05:30  INFO 30304 --- [Acintyo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-18T18:15:19.583+05:30  INFO 30304 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 4040 (http) with context path ''
+2024-04-18T18:15:19.592+05:30  INFO 30304 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Started AcintyoApplication in 0.952 seconds (process running for 133.047)
+2024-04-18T18:15:19.596+05:30  INFO 30304 --- [Acintyo] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-04-18T18:15:19.597+05:30  INFO 30304 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Application Started successfully
+2024-04-18T18:15:24.127+05:30  INFO 30304 --- [Acintyo] [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-04-18T18:15:24.146+05:30  INFO 30304 --- [Acintyo] [RMI TCP Connection(10)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-18T18:15:24.149+05:30  INFO 30304 --- [Acintyo] [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-04-18T18:15:24.166+05:30  INFO 30304 --- [Acintyo] [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-04-18T18:35:05.860+05:30  INFO 30408 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Starting AcintyoApplication using Java 17.0.9 with PID 30408 (D:\Acintyo\Acintyo\target\classes started by 91778 in D:\Acintyo\Acintyo)
+2024-04-18T18:35:05.863+05:30 DEBUG 30408 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-04-18T18:35:05.864+05:30  INFO 30408 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : No active profile set, falling back to 1 default profile: "default"
+2024-04-18T18:35:05.908+05:30  INFO 30408 --- [Acintyo] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\91778\.m2\repository\com\oracle\database\jdbc\ojdbc11\21.9.0.0\ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/C:/Users/91778/.m2/repository/com/oracle/database/jdbc/ojdbc11/21.9.0.0/oraclepki.jar
+2024-04-18T18:35:05.908+05:30  INFO 30408 --- [Acintyo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-18T18:35:05.908+05:30  INFO 30408 --- [Acintyo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-18T18:35:06.717+05:30  INFO 30408 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-18T18:35:06.827+05:30  INFO 30408 --- [Acintyo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 94 ms. Found 3 JPA repository interfaces.
+2024-04-18T18:35:07.431+05:30  INFO 30408 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 4040 (http)
+2024-04-18T18:35:07.452+05:30  INFO 30408 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-18T18:35:07.453+05:30  INFO 30408 --- [Acintyo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-18T18:35:07.576+05:30  INFO 30408 --- [Acintyo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-18T18:35:07.577+05:30  INFO 30408 --- [Acintyo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1669 ms
+2024-04-18T18:35:07.893+05:30  INFO 30408 --- [Acintyo] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-18T18:35:08.009+05:30  INFO 30408 --- [Acintyo] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-18T18:35:08.085+05:30  INFO 30408 --- [Acintyo] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-18T18:35:08.647+05:30  INFO 30408 --- [Acintyo] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-18T18:35:08.722+05:30  INFO 30408 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-18T18:35:09.017+05:30  INFO 30408 --- [Acintyo] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@5bc3c5a6
+2024-04-18T18:35:09.020+05:30  INFO 30408 --- [Acintyo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-18T18:35:09.193+05:30  WARN 30408 --- [Acintyo] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-18T18:35:10.169+05:30  INFO 30408 --- [Acintyo] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-18T18:35:10.678+05:30  INFO 30408 --- [Acintyo] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-18T18:35:11.189+05:30  WARN 30408 --- [Acintyo] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-18T18:35:11.534+05:30  INFO 30408 --- [Acintyo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-18T18:35:11.571+05:30  INFO 30408 --- [Acintyo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 4040 (http) with context path ''
+2024-04-18T18:35:11.582+05:30  INFO 30408 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Started AcintyoApplication in 6.047 seconds (process running for 6.685)
+2024-04-18T18:35:11.586+05:30  INFO 30408 --- [Acintyo] [restartedMain] a.a.transactions.AcintyoApplication      : Application Started successfully
+2024-04-18T18:37:40.146+05:30  INFO 30408 --- [Acintyo] [http-nio-4040-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-18T18:37:40.147+05:30  INFO 30408 --- [Acintyo] [http-nio-4040-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-18T18:37:40.150+05:30  INFO 30408 --- [Acintyo] [http-nio-4040-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-04-18T18:37:40.472+05:30 DEBUG 30408 --- [Acintyo] [http-nio-4040-exec-1] t.c.TransactionsRestOperationsController : New Transaction started
+2024-04-18T18:37:40.490+05:30  INFO 30408 --- [Acintyo] [http-nio-4040-exec-1] a.a.t.s.TransactionMgntServiceImpl       : newTransaction() method is invoked 
+2024-04-18T18:37:40.814+05:30 DEBUG 30408 --- [Acintyo] [http-nio-4040-exec-1] a.a.t.s.TransactionMgntServiceImpl       : User Not Found Creating new Hedaer  LedgerHeader(userId=USER1, storeId=STORE1, description=NEFT, headerAmt=0.0, note=CR, insertedOn=null, updatedOn=null)
+2024-04-18T18:37:40.814+05:30 DEBUG 30408 --- [Acintyo] [http-nio-4040-exec-1] a.a.t.s.TransactionMgntServiceImpl       : old Note = CR and new Note = CR 
+2024-04-18T18:37:40.814+05:30 DEBUG 30408 --- [Acintyo] [http-nio-4040-exec-1] a.a.t.s.TransactionMgntServiceImpl       : Header after Updation LedgerHeader(userId=USER1, storeId=STORE1, description=NEFT, headerAmt=1000.0, note=CR, insertedOn=null, updatedOn=null)
+2024-04-18T18:37:40.814+05:30 DEBUG 30408 --- [Acintyo] [http-nio-4040-exec-1] a.a.t.s.TransactionMgntServiceImpl       : Transfering data from DTO class to LedgerTransaction entity class
+2024-04-18T18:37:40.815+05:30 DEBUG 30408 --- [Acintyo] [http-nio-4040-exec-1] a.a.t.s.TransactionMgntServiceImpl       : Header added to Transaction
+2024-04-18T18:37:40.882+05:30 DEBUG 30408 --- [Acintyo] [http-nio-4040-exec-1] a.a.t.s.TransactionMgntServiceImpl       : History details are saved LedgerTransactionHistory(recordId=101, transId=T101, userId=USER1, storeId=STORE1, detais=NEFT, amount=1000.0, note=CR, transactionDate=2022-09-15T12:12:25, insertedBy=FARMER, insertDate=null)
+2024-04-18T18:37:40.891+05:30 DEBUG 30408 --- [Acintyo] [http-nio-4040-exec-1] a.a.t.s.TransactionMgntServiceImpl       : Transaction and Header Detais are saved using Transaction 
+2024-04-18T18:37:40.899+05:30 DEBUG 30408 --- [Acintyo] [http-nio-4040-exec-1] a.a.t.s.TransactionMgntServiceImpl       : Transaction Data LedgerTransaction [recordId=101, transId=T101, storeId=STORE1, detais=NEFT, amount=1000.0, note=CR, transactionDate=2022-09-15T12:12:25, insertedBy=FARMER, insertedOn=null, updatedBy=null, updatedOn=null]
+2024-04-18T18:37:40.900+05:30 DEBUG 30408 --- [Acintyo] [http-nio-4040-exec-1] a.a.t.s.TransactionMgntServiceImpl       : Header Data LedgerHeader(userId=USER1, storeId=STORE1, description=NEFT, headerAmt=1000.0, note=CR, insertedOn=null, updatedOn=null)
+2024-04-18T18:39:25.966+05:30 DEBUG 30408 --- [Acintyo] [http-nio-4040-exec-4] t.c.TransactionsRestOperationsController : New Transaction started
+2024-04-18T18:39:25.970+05:30  INFO 30408 --- [Acintyo] [http-nio-4040-exec-4] a.a.t.s.TransactionMgntServiceImpl       : newTransaction() method is invoked 
+2024-04-18T18:39:26.009+05:30 DEBUG 30408 --- [Acintyo] [http-nio-4040-exec-4] a.a.t.s.TransactionMgntServiceImpl       : TransId is already Present. Throwing TransactionNotFoundException
+2024-04-18T18:39:26.021+05:30  WARN 30408 --- [Acintyo] [http-nio-4040-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [ai.acintyo.transactions.exceptions.TransactionFoundException: TransId is already Present. Please send unique value]
+2024-04-18T18:39:34.546+05:30  WARN 30408 --- [Acintyo] [http-nio-4040-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+2024-04-18T18:40:04.060+05:30  INFO 30408 --- [Acintyo] [http-nio-4040-exec-8] a.a.t.s.TransactionMgntServiceImpl       :  updateTransaction() method is invoked 
+2024-04-18T18:40:04.087+05:30 DEBUG 30408 --- [Acintyo] [http-nio-4040-exec-8] a.a.t.s.TransactionMgntServiceImpl       : 
+2024-04-18T18:42:30.857+05:30  INFO 30408 --- [Acintyo] [RMI TCP Connection(18)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-04-18T18:42:30.903+05:30  INFO 30408 --- [Acintyo] [RMI TCP Connection(18)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-18T18:42:30.911+05:30  INFO 30408 --- [Acintyo] [RMI TCP Connection(18)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-18T18:42:30.978+05:30  INFO 30408 --- [Acintyo] [RMI TCP Connection(18)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

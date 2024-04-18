@@ -6,8 +6,6 @@ import java.time.LocalDateTime;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import ai.acintyo.transactions.dto.RequestDto;
-import ai.acintyo.transactions.dto.UpdateRequestDto;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,6 +18,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -31,6 +30,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "LEDGER_TRANSACTION")
+@Builder
 public class LedgerTransaction implements Serializable{
 	
 	@Id
@@ -69,32 +69,6 @@ public class LedgerTransaction implements Serializable{
 	@ManyToOne(targetEntity = LedgerHeader.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "user_Id", referencedColumnName = "userId")
 	private LedgerHeader header;
-
-	
-	//constructor for new Transaction
-	public LedgerTransaction(RequestDto request) {
-		super();
-		this.transId=request.getTransId().toUpperCase();
-		this.storeId=request.getStoreId().toUpperCase();
-		this.detais=request.getDetais();
-		this.amount=request.getAmount();
-		this.note=request.getNote().toUpperCase();
-		this.transactionDate=request.getTransactionDate();
-		this.insertedBy=request.getInsertedBy();
-	}
-	
-	//constructor for update Transaction
-	public LedgerTransaction(UpdateRequestDto request) {
-		super();
-		this.recordId=request.getRecordId();
-		this.transId=request.getTransId().toUpperCase();
-		this.storeId=request.getStoreId().toUpperCase();
-		this.detais=request.getDetais();
-		this.amount=request.getAmount();
-		this.note=request.getNote().toUpperCase();
-		this.transactionDate=request.getTransactionDate();
-		this.updatedBy=request.getUpdatedBy();
-	}
 
 	@Override
 	public String toString() {

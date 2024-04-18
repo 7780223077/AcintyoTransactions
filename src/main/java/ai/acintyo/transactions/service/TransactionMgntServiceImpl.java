@@ -21,6 +21,7 @@ import ai.acintyo.transactions.entity.LedgerTransaction;
 import ai.acintyo.transactions.entity.LedgerTransactionHistory;
 import ai.acintyo.transactions.exceptions.TransactionFoundException;
 import ai.acintyo.transactions.exceptions.TransactionNotFoundException;
+import ai.acintyo.transactions.mapper.TransactionMapper;
 import ai.acintyo.transactions.repository.ILedgerHeaderRepository;
 import ai.acintyo.transactions.repository.ILedgerTransactionHistoryRepository;
 import ai.acintyo.transactions.repository.ILedgerTransactionRepository;
@@ -44,10 +45,11 @@ public class TransactionMgntServiceImpl implements ITransactionMgntService {
 	public  LedgerResponse newTransaction(RequestDto dto) {
 		//checking whether TransId is already present or Not
 		log.info("newTransaction() method is invoked ");
+		//Converting data into upper case
 		dto.convertToUpperCase();
 		Optional<LedgerTransaction> transId = transactionRepository.findByTransId(dto.getTransId());
 		if(transId.isPresent()) {
-			log.debug("TransId is already Present. Throwing TransactionNotFoundException");
+			log.debug("TransId is already Present. Throwing TransactionFoundException");
 			throw new TransactionFoundException("TransId is already Present. Please send unique value");
 		}
 		//checking whether a user is already present or not
@@ -60,8 +62,7 @@ public class TransactionMgntServiceImpl implements ITransactionMgntService {
 			log.debug("User is already Present "+header);
 		} else {
 			// craete new Header
-			header = new LedgerHeader(dto.getUserId(), dto.getStoreId(), 
-					dto.getDetais(), 0.0, "CR");
+			header = new LedgerHeader(dto.getUserId(), dto.getStoreId(), dto.getDetais(), 0.0, "CR");
 			log.debug("User Not Found Creating new Hedaer  "+header);
 		}
 		String headerNote = header.getNote();
@@ -69,14 +70,14 @@ public class TransactionMgntServiceImpl implements ITransactionMgntService {
 		header.setDescription(dto.getDetais());
 		// note: old=CR and new=CR
 		if (headerNote.equalsIgnoreCase("CR") && newNote.equalsIgnoreCase("CR")) {
-			header.setNote(newNote);
+			//header.setNote(newNote);
 			header.setHeaderAmt(header.getHeaderAmt() + dto.getAmount());
 			log.debug("old Note = CR and new Note = CR ");
 			log.debug("Header after Updation "+header);
 		}
-		// note: old=DR and new=CR
+		// note: old=DR and new=DR
 		else if (headerNote.equalsIgnoreCase("DR") && newNote.equalsIgnoreCase("DR")) {
-			header.setNote(newNote);
+			//header.setNote(newNote);
 			header.setHeaderAmt(header.getHeaderAmt() + dto.getAmount());
 			log.debug("old Note = DR and new Note = DR ");
 			log.debug("Header after Updation "+header);
@@ -98,19 +99,11 @@ public class TransactionMgntServiceImpl implements ITransactionMgntService {
 			log.debug("Header after Updation "+header);
 		}
 		log.debug("Transfering data from DTO class to LedgerTransaction entity class");
-		LedgerTransaction ct = new LedgerTransaction(dto);
+		LedgerTransaction ct = TransactionMapper.requestDtoToTransactionEntity(dto);
 		ct.setHeader(header);
 		log.debug("Header added to Transaction");
 		
-		LedgerTransactionHistory history = new LedgerTransactionHistory();
-		history.setTransId(dto.getTransId());
-		history.setUserId(dto.getUserId());
-		history.setStoreId(dto.getStoreId());
-		history.setDetais(dto.getDetais());
-		history.setAmount(dto.getAmount());
-		history.setNote(dto.getNote());
-		history.setTransactionDate(dto.getTransactionDate());
-		history.setInsertedBy(dto.getInsertedBy());
+		LedgerTransactionHistory history = TransactionMapper.requestDtoToHistoryEntity(dto);
 		// save the history
 		historyRepository.save(history);
 		log.debug("History details are saved "+history);
@@ -165,11 +158,7 @@ public class TransactionMgntServiceImpl implements ITransactionMgntService {
 		header.setNote(headerAmt >= 0.0 ? "CR" : "DR");
 		header.setHeaderAmt(Math.abs(headerAmt));
 
-		LedgerTransactionHistory history = new LedgerTransactionHistory(
-				dto.getTransId(), dto.getUserId(),
-				dto.getStoreId(), dto.getDetais(), dto.getAmount(), 
-				dto.getNote(), dto.getTransactionDate(),
-				dto.getUpdatedBy());
+		LedgerTransactionHistory history = TransactionMapper.updateRequestDtoToHistoryEntity(dto);
 		
 		historyRepository.save(history);
 
@@ -187,7 +176,7 @@ public class TransactionMgntServiceImpl implements ITransactionMgntService {
 	public HeaderDto findHeader(String userId, String storeId) {
 		Optional<LedgerHeader> optional = headerRepository.findByUserIdIgnoreCaseAndStoreIdIgnoreCase(userId, storeId);
 		if(optional.isPresent()) 
-			return new HeaderDto(optional.get());
+			return TransactionMapper.entityToHeaderDto(optional.get());
 		else return new HeaderDto();
 	}
 

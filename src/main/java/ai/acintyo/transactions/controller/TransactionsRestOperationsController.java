@@ -57,7 +57,7 @@ public class TransactionsRestOperationsController {
 	public ResponseEntity<List<TransactionDto>> getTransactions(
 			@PathVariable String userId, 
 			@PathVariable String storeId, 
-			@RequestParam(required = false) int page,
+			@RequestParam(required = false, defaultValue = "") int page,
 			@RequestParam(required = false, defaultValue = "20") int size,
 			@RequestParam(required = false, defaultValue = "transactionDate") String sortBy,
 			@RequestParam(required = false, defaultValue = "DESC") String order) {
@@ -85,7 +85,7 @@ public class TransactionsRestOperationsController {
 	public ResponseEntity<List<HistoryDto>> getTransactionsHistory(
 			@PathVariable String userId, 
 			@PathVariable String storeId, 
-			@RequestParam(required = false) int page,
+			@RequestParam(required = false, defaultValue = "0") int page,
 			@RequestParam(required = false,defaultValue = "20") int size,
 			@RequestParam(required = false, defaultValue = "transactionDate") String sortBy,
 			@RequestParam(required = false, defaultValue = "DESC") String order){
